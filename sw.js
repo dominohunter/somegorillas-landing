@@ -1,7 +1,8 @@
 // Production-ready Service Worker optimized for Vercel
-const CACHE_NAME = "somegorillas-v4";
-const STATIC_CACHE = "somegorillas-static-v4";
-const RUNTIME_CACHE = "somegorillas-runtime-v4";
+const CACHE_VERSION = "v4.1";
+const CACHE_NAME = `somegorillas-${CACHE_VERSION}`;
+const STATIC_CACHE = `somegorillas-static-${CACHE_VERSION}`;
+const RUNTIME_CACHE = `somegorillas-runtime-${CACHE_VERSION}`;
 
 // Critical assets - cache immediately on install
 const CRITICAL_ASSETS = [
@@ -59,37 +60,9 @@ const SECTION_ASSETS = [
   "/up-right.svg",
 ];
 
-// Install: Aggressive caching for assets
+// Install: Caching disabled temporarily
 self.addEventListener("install", (event) => {
-  console.log("[SW] Installing...");
-  
-  event.waitUntil(
-    Promise.all([
-      // Cache critical assets first
-      caches.open(STATIC_CACHE).then(cache => {
-        console.log("[SW] Caching critical assets");
-        return cache.addAll(CRITICAL_ASSETS);
-      }),
-      
-      // Cache hero assets (high priority)
-      caches.open(RUNTIME_CACHE).then(cache => {
-        console.log("[SW] Caching hero assets");
-        return Promise.allSettled(
-          HERO_ASSETS.map(asset => 
-            cache.add(asset).catch(err => {
-              console.warn(`[SW] Failed to cache ${asset}:`, err);
-              return null;
-            })
-          )
-        );
-      })
-    ]).then(() => {
-      console.log("[SW] Installation complete");
-      // Cache other assets in background after install
-      cacheOtherAssets();
-    })
-  );
-  
+  console.log("[SW] Installing... (caching disabled)");
   self.skipWaiting();
 });
 
@@ -105,56 +78,34 @@ function cacheOtherAssets() {
   });
 }
 
-// Activate: Clean old caches aggressively
+// Activate: Clear all caches temporarily
 self.addEventListener("activate", (event) => {
-  console.log("[SW] Activating...");
+  console.log("[SW] Activating... (clearing all caches)");
   
   event.waitUntil(
     caches.keys().then(cacheNames => {
       return Promise.all(
         cacheNames
           .filter(cacheName => 
-            cacheName !== STATIC_CACHE && 
-            cacheName !== RUNTIME_CACHE &&
-            (cacheName.startsWith('somegorillas-') || cacheName.startsWith('gorillas-'))
+            cacheName.startsWith('somegorillas-') || cacheName.startsWith('gorillas-')
           )
           .map(cacheName => {
-            console.log("[SW] Deleting old cache:", cacheName);
+            console.log("[SW] Deleting cache:", cacheName);
             return caches.delete(cacheName);
           })
       );
     }).then(() => {
-      console.log("[SW] Activation complete");
+      console.log("[SW] All caches cleared, activation complete");
     })
   );
   
   self.clients.claim();
 });
 
-// Fetch: Smart caching strategy
+// Fetch: Caching disabled - pass through all requests
 self.addEventListener("fetch", (event) => {
-  const { request } = event;
-  const url = new URL(request.url);
-  
-  // Skip non-GET requests
-  if (request.method !== "GET") return;
-  
-  // Skip external requests (but allow same-origin)
-  if (url.origin !== location.origin) return;
-  
-  // Skip Chrome extension requests
-  if (url.protocol === 'chrome-extension:') return;
-
-  // Different strategies for different asset types
-  if (isStaticAsset(url.pathname)) {
-    event.respondWith(cacheFirstStrategy(request));
-  } else if (isImageAsset(url.pathname)) {
-    event.respondWith(cacheFirstWithFallback(request));
-  } else if (isHTMLRequest(request)) {
-    event.respondWith(networkFirstStrategy(request));
-  } else {
-    event.respondWith(cacheFirstStrategy(request));
-  }
+  // Just pass through all requests without caching
+  return;
 });
 
 // Cache-first strategy for static assets
@@ -251,6 +202,40 @@ self.addEventListener('message', (event) => {
   }
 });
 
+// Verify critical assets are properly cached
+async function verifyCriticalAssets() {
+  try {
+    const staticCache = await caches.open(STATIC_CACHE);
+    const runtimeCache = await caches.open(RUNTIME_CACHE);
+    
+    const criticalChecks = await Promise.all([
+      ...CRITICAL_ASSETS.map(asset => staticCache.match(asset)),
+      ...HERO_ASSETS.slice(0, 3).map(asset => runtimeCache.match(asset))
+    ]);
+    
+    const cachedCount = criticalChecks.filter(response => response).length;
+    const totalCritical = CRITICAL_ASSETS.length + 3;
+    
+    console.log(`[SW] Critical assets cached: ${cachedCount}/${totalCritical}`);
+    
+    if (cachedCount < totalCritical * 0.8) {
+      console.warn("[SW] Insufficient critical assets cached, retrying...");
+      // Retry caching critical assets
+      setTimeout(() => {
+        Promise.allSettled([
+          staticCache.addAll(CRITICAL_ASSETS),
+          ...HERO_ASSETS.slice(0, 3).map(asset => runtimeCache.add(asset))
+        ]);
+      }, 1000);
+    }
+    
+    return cachedCount >= totalCritical * 0.8;
+  } catch (error) {
+    console.error("[SW] Critical asset verification failed:", error);
+    return false;
+  }
+}
+
 async function getCacheStatus() {
   const cacheNames = await caches.keys();
   const sizes = await Promise.all(
@@ -263,6 +248,7 @@ async function getCacheStatus() {
   
   return {
     caches: sizes,
-    total: sizes.reduce((sum, cache) => sum + cache.size, 0)
+    total: sizes.reduce((sum, cache) => sum + cache.size, 0),
+    criticalAssetsCached: await verifyCriticalAssets()
   };
 }

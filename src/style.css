@@ -1,402 +1,458 @@
 @import "tailwindcss";
 
 @theme {
-  --font-pally: "Pally", sans-serif;
-  --font-clash: "Clash Display", sans-serif;
+    --font-pally: "Pally", sans-serif;
+    --font-clash: "Clash Display", sans-serif;
 
-  /* Color System */
-  --color-accent-primary: #f5ba31;
-  --color-accent-secondary: #ffd700;
-  --color-dark-primary: #0f1012;
-  --color-dark-secondary: #131416;
-  --color-dark-tertiary: #17181a;
-  --color-dark-quaternary: #1b1c1e;
-  --color-light-primary: #fafafa;
-  --color-light-secondary: #f2f2f2;
-  --color-light-tertiary: #ebebeb;
-  --color-light-quaternary: #e6e6e6;
-  --color-translucent-light-2: #ffffff05;
-  --color-translucent-light-4: #ffffff0a;
-  --color-translucent-light-8: #ffffff14;
-  --color-translucent-light-12: #ffffff1f;
-  --color-translucent-light-16: #ffffff29;
-  --color-translucent-light-24: #ffffff3d;
-  --color-translucent-light-32: #ffffff52;
-  --color-translucent-light-48: #ffffff7a;
-  --color-translucent-light-64: #ffffffa3;
-  --color-translucent-light-72: #ffffffb8;
-  --color-translucent-light-80: #ffffffcc;
-  --color-translucent-dark-2: #0f101205;
-  --color-translucent-dark-4: #0f10120a;
-  --color-translucent-dark-8: #0f101214;
-  --color-translucent-dark-12: #0f10121f;
-  --color-translucent-dark-16: #0f101229;
-  --color-translucent-dark-24: #0f10123d;
-  --color-translucent-dark-32: #0f101252;
-  --color-translucent-dark-48: #0f10127a;
-  --color-translucent-dark-64: #0f1012a3;
-  --color-translucent-dark-72: #0f1012b8;
-  --color-translucent-dark-80: #0f1012cc;
-  --color-system-success-primary: #2cb59e;
-  --color-system-success-secondary: #2cb59e52;
-  --color-system-success-tertiary: #2cb59e29;
-  --color-system-success-quaternary: #2cb59e14;
-  --color-system-error-primary: #ff5c69;
-  --color-system-error-secondary: #ff5c6952;
-  --color-system-error-tertiary: #ff5c6929;
-  --color-system-error-quaternary: #ff5c6914;
+    /* Color System */
+    --color-accent-primary: #f5ba31;
+    --color-accent-secondary: #ffd700;
+    --color-dark-primary: #0f1012;
+    --color-dark-secondary: #131416;
+    --color-dark-tertiary: #17181a;
+    --color-dark-quaternary: #1b1c1e;
+    --color-light-primary: #fafafa;
+    --color-light-secondary: #f2f2f2;
+    --color-light-tertiary: #ebebeb;
+    --color-light-quaternary: #e6e6e6;
+    --color-translucent-light-2: #ffffff05;
+    --color-translucent-light-4: #ffffff0a;
+    --color-translucent-light-8: #ffffff14;
+    --color-translucent-light-12: #ffffff1f;
+    --color-translucent-light-16: #ffffff29;
+    --color-translucent-light-24: #ffffff3d;
+    --color-translucent-light-32: #ffffff52;
+    --color-translucent-light-48: #ffffff7a;
+    --color-translucent-light-64: #ffffffa3;
+    --color-translucent-light-72: #ffffffb8;
+    --color-translucent-light-80: #ffffffcc;
+    --color-translucent-dark-2: #0f101205;
+    --color-translucent-dark-4: #0f10120a;
+    --color-translucent-dark-8: #0f101214;
+    --color-translucent-dark-12: #0f10121f;
+    --color-translucent-dark-16: #0f101229;
+    --color-translucent-dark-24: #0f10123d;
+    --color-translucent-dark-32: #0f101252;
+    --color-translucent-dark-48: #0f10127a;
+    --color-translucent-dark-64: #0f1012a3;
+    --color-translucent-dark-72: #0f1012b8;
+    --color-translucent-dark-80: #0f1012cc;
+    --color-system-success-primary: #2cb59e;
+    --color-system-success-secondary: #2cb59e52;
+    --color-system-success-tertiary: #2cb59e29;
+    --color-system-success-quaternary: #2cb59e14;
+    --color-system-error-primary: #ff5c69;
+    --color-system-error-secondary: #ff5c6952;
+    --color-system-error-tertiary: #ff5c6929;
+    --color-system-error-quaternary: #ff5c6914;
 }
 
 @font-face {
-  font-family: "Clash Display";
-  src: url("/ClashDisplay-Variable.ttf") format("truetype");
-  font-weight: 100 900;
-  font-display: swap;
+    font-family: "Clash Display";
+    src: url("/ClashDisplay-Variable.ttf") format("truetype");
+    font-weight: 100 900;
+    font-display: swap;
 }
 
 @font-face {
-  font-family: "Pally";
-  src: url("/Pally-Variable.ttf") format("truetype");
-  font-weight: 100 900;
-  font-display: swap;
+    font-family: "Pally";
+    src: url("/Pally-Variable.ttf") format("truetype");
+    font-weight: 100 900;
+    font-display: swap;
 }
 
 :root {
-  /* Color Variables */
-  --accent-primary: var(--color-accent-primary);
-  --accent-secondary: var(--color-accent-secondary);
-  --dark-primary: var(--color-dark-primary);
-  --dark-secondary: var(--color-dark-secondary);
-  --dark-tertiary: var(--color-dark-tertiary);
-  --dark-quaternary: var(--color-dark-quaternary);
-  --light-primary: var(--color-light-primary);
-  --light-secondary: var(--color-light-secondary);
-  --light-tertiary: var(--color-light-tertiary);
-  --light-quaternary: var(--color-light-quaternary);
+    /* Color Variables */
+    --accent-primary: var(--color-accent-primary);
+    --accent-secondary: var(--color-accent-secondary);
+    --dark-primary: var(--color-dark-primary);
+    --dark-secondary: var(--color-dark-secondary);
+    --dark-tertiary: var(--color-dark-tertiary);
+    --dark-quaternary: var(--color-dark-quaternary);
+    --light-primary: var(--color-light-primary);
+    --light-secondary: var(--color-light-secondary);
+    --light-tertiary: var(--color-light-tertiary);
+    --light-quaternary: var(--color-light-quaternary);
 
-  /* Base Styles */
-  font-family: "Clash Display", system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-  color-scheme: light dark;
-  color: var(--light-primary);
-  background-color: var(--dark-primary);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    /* Base Styles */
+    font-family:
+        "Clash Display", system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    color-scheme: light dark;
+    color: var(--light-primary);
+    background-color: var(--dark-primary);
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 a {
-  font-weight: 500;
-  color: var(--accent-primary);
-  text-decoration: inherit;
+    font-weight: 500;
+    color: var(--accent-primary);
+    text-decoration: inherit;
 }
 
 a:hover {
-  color: var(--accent-secondary);
+    color: var(--accent-secondary);
 }
 
 body {
-  margin: 0;
-  overflow-x: hidden;
-  background-color: var(--dark-primary);
-  color: var(--light-primary);
+    margin: 0;
+    overflow-x: hidden;
+    background-color: var(--dark-primary);
+    color: var(--light-primary);
 }
 
 /* Hide scrollbar for all browsers */
 * {
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
 }
 
 *::-webkit-scrollbar {
-  display: none; /* WebKit */
+    display: none; /* WebKit */
 }
 
 html {
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  background-color: var(--dark-primary);
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    background-color: var(--dark-primary);
 }
 
 html::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-  color: var(--light-primary);
+    font-size: 3.2em;
+    line-height: 1.1;
+    color: var(--light-primary);
 }
 
 #app {
-  width: 100%;
-  height: 100%;
+    width: 100%;
+    height: 100%;
 }
 
 .logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+    height: 6em;
+    padding: 1.5em;
+    will-change: filter;
+    transition: filter 300ms;
 }
 
 .logo:hover {
-  filter: drop-shadow(0 0 2em var(--color-accent-primary));
+    filter: drop-shadow(0 0 2em var(--color-accent-primary));
 }
 
 .logo.vanilla:hover {
-  filter: drop-shadow(0 0 2em var(--color-accent-secondary));
+    filter: drop-shadow(0 0 2em var(--color-accent-secondary));
 }
 
 .card {
-  padding: 2em;
-  background-color: var(--color-translucent-light-4);
-  border: 1px solid var(--color-translucent-light-8);
+    padding: 2em;
+    background-color: var(--color-translucent-light-4);
+    border: 1px solid var(--color-translucent-light-8);
 }
 
 .read-the-docs {
-  color: var(--color-translucent-light-64);
+    color: var(--color-translucent-light-64);
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: var(--dark-secondary);
-  color: var(--light-primary);
-  cursor: pointer;
-  transition: border-color 0.25s;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    color: var(--light-primary);
+    cursor: pointer;
+    transition: border-color 0.25s;
 }
 
 button:hover {
-  border-color: var(--accent-primary);
+    border-color: var(--accent-primary);
 }
 
 button:focus,
 button:focus-visible {
-  outline: 4px auto var(--accent-primary);
+    outline: 4px auto var(--accent-primary);
 }
 
 @media (prefers-color-scheme: light) {
-  :root {
-    color: var(--dark-primary);
-    background-color: var(--light-primary);
-  }
+    :root {
+        color: var(--dark-primary);
+        background-color: var(--light-primary);
+    }
 
-  body {
-    background-color: var(--light-primary);
-    color: var(--dark-primary);
-  }
+    body {
+        background-color: var(--light-primary);
+        color: var(--dark-primary);
+    }
 
-  html {
-    background-color: var(--light-primary);
-  }
+    html {
+        background-color: var(--light-primary);
+    }
 
-  h1 {
-    color: var(--dark-primary);
-  }
+    h1 {
+        color: var(--dark-primary);
+    }
 
-  a:hover {
-    color: var(--accent-secondary);
-  }
+    a:hover {
+        color: var(--accent-secondary);
+    }
 
-  button {
-    background-color: var(--light-secondary);
-    color: var(--dark-primary);
-  }
+    button {
+        color: var(--dark-primary);
+    }
 
-  .card {
-    background-color: var(--color-translucent-dark-4);
-    border: 1px solid var(--color-translucent-dark-8);
-  }
+    .card {
+        background-color: var(--color-translucent-dark-4);
+        border: 1px solid var(--color-translucent-dark-8);
+    }
 
-  .read-the-docs {
-    color: var(--color-translucent-dark-64);
-  }
+    .read-the-docs {
+        color: var(--color-translucent-dark-64);
+    }
 }
 
 .cartoon-shadow {
-  text-shadow: 4px 4px 0px var(--dark-primary);
+    text-shadow: 4px 4px 0px var(--dark-primary);
 }
 
 .cartoon-boxshadow {
-  box-shadow: 4px 4px 0px var(--dark-primary);
+    box-shadow: 4px 4px 0px var(--dark-primary);
 }
 
 /* Light mode cartoon effects */
 @media (prefers-color-scheme: light) {
-  .cartoon-shadow {
-    text-shadow: 4px 4px 0px var(--light-primary);
-  }
+    .cartoon-shadow {
+        text-shadow: 4px 4px 0px var(--light-primary);
+    }
 
-  .cartoon-boxshadow {
-    box-shadow: 4px 4px 0px var(--light-primary);
-  }
-}
-
-/* Section background styles */
-.hero-section {
-  background-image: url('/backgrounds/Hero%20section.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.section-2 {
-  background-image: url('/backgrounds/Section%202.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.section-3 {
-  background-image: url('/backgrounds/Section%203.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.section-4 {
-  background-image: url('/backgrounds/Section%204.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.section-5 {
-  background-image: url('/backgrounds/Section%205.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.section-6 {
-  background-image: url('/backgrounds/Section%206.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.section-7 {
-  background-image: url('/backgrounds/Section%207.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.final-section {
-  background-image: url('/backgrounds/Hero%20section.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+    .cartoon-boxshadow {
+        box-shadow: 4px 4px 0px var(--light-primary);
+    }
 }
 
 /* Gradient blur utility */
 .gradient-blur {
-  background: linear-gradient(270deg, #69C9EC 0%, #332FF5 33%, #A638E7 67%, #E13949 100%);
-  filter: blur(100px);
+    background: linear-gradient(
+        270deg,
+        #69c9ec 0%,
+        #332ff5 33%,
+        #a638e7 67%,
+        #e13949 100%
+    );
+    filter: blur(100px);
 }
 
 /* Utility for disabled cursor */
 .disabled-cursor {
-  cursor: not-allowed;
+    cursor: not-allowed;
 }
 
 /* Improved transitions for interactive elements */
 .roadmap-card,
 .faq-item {
-  transition: all 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .roadmap-card:hover,
 .faq-item:hover {
-  transform: translateY(-2px);
+    transform: translateY(-2px);
 }
 
 /* Performance optimizations */
 img {
-  content-visibility: auto;
+    content-visibility: auto;
 }
 
 /* Better focus styles */
 button:focus-visible,
 input:focus-visible {
-  outline: 2px solid var(--accent-primary);
-  outline-offset: 2px;
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 2px;
 }
 
-/* Animation performance optimizations */
+/* FAQ mouth transition styles */
+.mouth-transition {
+    transition: opacity 0.3s ease-in-out;
+}
+
+.faq-item {
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.faq-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 6px 6px 0px var(--dark-primary);
+}
+
+/* Answer text animation */
+#answer-text {
+    transition: all 0.3s ease-in-out;
+}
+
+/* Disable all floating animations */
 .hero-section * {
-  will-change: transform;
+    will-change: auto;
 }
 
-/* Smooth transforms for hero elements */
+/* Remove transform optimizations that can cause floating */
 #header,
 #banana,
 #eclipse,
 [id^="ape"],
-#goldie,
-button {
-  backface-visibility: hidden;
-  perspective: 1000px;
-  transform-style: preserve-3d;
+#goldie {
+    backface-visibility: visible;
+    perspective: none;
+    transform-style: flat;
+    transform: none !important;
 }
 
-/* Particle effects container */
-.particle-container {
-  overflow: hidden;
+/* Keep buttons functional with proper positioning */
+.hero-section button {
+    position: relative;
+    z-index: 10;
+    backface-visibility: visible;
+    perspective: none;
+    transform-style: flat;
 }
 
 /* Enhanced hero section styles */
 .hero-section {
-  position: relative;
-  overflow: hidden;
+    position: relative;
+    overflow: hidden;
 }
 
-/* Gorilla hover enhancement */
+/* Simple hover effects without transforms */
 [id^="ape"]:hover,
 #goldie:hover {
-  filter: brightness(1.1) contrast(1.1);
-  transition: filter 0.3s ease;
+    filter: brightness(1.1) contrast(1.1);
+    transition: filter 0.3s ease;
 }
 
-/* Button enhancement */
+/* Button enhancement without transforms */
 button {
-  transform-origin: center center;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition:
+        box-shadow 0.3s ease,
+        filter 0.3s ease;
 }
 
 button:hover {
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2), 4px 4px 0px var(--dark-primary);
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.15),
+        4px 4px 0px var(--dark-primary);
+    filter: brightness(1.05);
 }
 
 /* Text rendering optimization */
 #header {
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 /* Smooth scrolling enhancement */
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
-/* Responsive animation adjustments */
+/* Mobile responsive adjustments */
 @media (max-width: 768px) {
-  .hero-section * {
-    will-change: auto;
-  }
-  
-  [id^="ape"],
-  #goldie {
-    transform: none !important;
-  }
+    .hero-section * {
+        will-change: auto;
+    }
+
+    [id^="ape"],
+    #goldie {
+        transform: none !important;
+        animation: none !important;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+
+    /* Ensure sections don't break on mobile */
+    section {
+        min-width: 0;
+    }
+
+    /* Mobile typography */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    /* Mobile button sizing */
+    button {
+        min-height: 44px;
+        min-width: 44px;
+        font-size: 1rem;
+    }
+
+    /* Mobile grid adjustments */
+    .grid {
+        gap: 0.75rem;
+    }
+
+    /* Better mobile readability */
+    .font-pally {
+        line-height: 1.6;
+    }
+}
+
+/* Tablet responsive adjustments */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Optimize spacing for tablets */
+    .hero-section {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    /* Better tablet button sizing */
+    button {
+        padding: 0.75rem 1.5rem;
+    }
+
+    /* Tablet grid optimizations */
+    .grid-cols-3 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+    /* Larger touch targets */
+    button,
+    .cursor-pointer {
+        min-height: 48px;
+        min-width: 48px;
+    }
+
+    /* Remove hover effects on touch devices */
+    .hover\:scale-105:hover {
+        transform: none;
+    }
+
+    /* Better focus states for touch */
+    button:focus,
+    .cursor-pointer:focus {
+        outline: 3px solid var(--accent-primary);
+        outline-offset: 2px;
+    }
 }
 
 /* Preload animation states */
@@ -406,15 +462,32 @@ html {
 .loading #eclipse,
 .loading [id^="ape"],
 .loading #goldie {
-  opacity: 0;
-  transform: translateY(50px);
+    opacity: 0;
+    transform: translateY(50px);
 }
 
-/* GPU acceleration for smooth animations */
+/* Remove all GPU acceleration and transforms */
 .hero-section,
 #header,
 #banana,
 [id^="ape"],
 #goldie {
-  transform: translateZ(0);
+    transform: none !important;
+    animation: none !important;
+}
+
+/* Ensure buttons in hero section stay visible */
+.hero-section button {
+    animation: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Allow GSAP dragging but prevent conflicting transforms */
+.apes {
+    transition: filter 0.3s ease;
+}
+
+.apes:hover:not([style*="transform"]) {
+    filter: brightness(1.1) saturate(1.1);
 }

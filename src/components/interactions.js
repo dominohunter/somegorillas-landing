@@ -34,6 +34,8 @@ export function setupMouthHover() {
 
 // FAQ interaction functionality
 export function setupFAQEventListeners() {
+  console.log("Setting up FAQ event listeners...");
+  
   const answers = [
     "Because, We are.",
     "Because, Gorilla eat banana.",
@@ -44,33 +46,49 @@ export function setupFAQEventListeners() {
   ];
 
   function showAnswer(index) {
+    console.log(`Showing answer for index ${index}: "${answers[index]}"`);
+    
     const mouthClosed = document.getElementById("mouth-closed");
     const mouthOpen = document.getElementById("mouth-open");
+    const answerText = document.getElementById("answer-text");
+
+    console.log("Elements found:", { mouthClosed, mouthOpen, answerText });
 
     if (mouthClosed && mouthOpen) {
       mouthClosed.style.opacity = "0";
       mouthOpen.style.opacity = "1";
+      console.log("Mouth animation triggered");
+    } else {
+      console.error("Mouth elements not found!");
     }
 
-    const answerText = document.getElementById("answer-text");
     if (answerText) {
       answerText.textContent = answers[index];
+      console.log("Answer text updated");
+    } else {
+      console.error("Answer text element not found!");
     }
 
     setTimeout(() => {
       if (mouthClosed && mouthOpen) {
         mouthClosed.style.opacity = "1";
         mouthOpen.style.opacity = "0";
+        console.log("Mouth closed after 3 seconds");
       }
     }, 3000);
   }
 
   // Set up event listeners for FAQ items
   const faqItems = document.querySelectorAll(".faq-item[data-faq-index]");
+  console.log(`Found ${faqItems.length} FAQ items`);
   
-  faqItems.forEach((item) => {
+  faqItems.forEach((item, i) => {
+    console.log(`Setting up FAQ item ${i}:`, item);
+    
     item.addEventListener("click", (e) => {
+      console.log("FAQ item clicked:", item);
       const index = parseInt(item.getAttribute("data-faq-index"));
+      console.log("FAQ index:", index);
       showAnswer(index);
     });
 
@@ -88,6 +106,8 @@ export function setupFAQEventListeners() {
 
   // Also expose globally for backwards compatibility
   window.showAnswer = showAnswer;
+  
+  console.log("FAQ event listeners setup complete");
 }
 
 // Draggable NFTs functionality

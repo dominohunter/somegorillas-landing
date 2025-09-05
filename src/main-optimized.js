@@ -28,11 +28,9 @@ if ("serviceWorker" in navigator) {
     });
 }
 
-// Cache status check
-function checkCacheStatus() {
-  return caches
-    .match("/backgrounds/Hero%20section.png")
-    .then((response) => !!response);
+// Cache disabled temporarily
+async function checkCacheStatus() {
+  return false; // Always return false to show loader
 }
 
 // Main initialization function
@@ -98,7 +96,6 @@ function initializeApp() {
   setTimeout(() => {
     // Initialize hero animations first (most important)
     initHeroAnimations();
-    createParticleEffect();
     
     // Then other interactions
     setupMouthHover();
@@ -109,31 +106,10 @@ function initializeApp() {
 
   console.log("App initialization complete");
   
-  // Debug cache status in development
-  if (import.meta.env.DEV) {
-    setTimeout(() => {
-      debugCacheStatus();
-    }, 2000);
-  }
+  // Cache debug disabled
 }
 
-// Debug function for cache status
-async function debugCacheStatus() {
-  try {
-    const cacheNames = await caches.keys();
-    console.log("[Debug] Available caches:", cacheNames);
-    
-    for (const cacheName of cacheNames) {
-      const cache = await caches.open(cacheName);
-      const keys = await cache.keys();
-      console.log(`[Debug] Cache '${cacheName}' contains ${keys.length} items:`, 
-        keys.slice(0, 5).map(req => req.url)
-      );
-    }
-  } catch (error) {
-    console.error("[Debug] Failed to check cache status:", error);
-  }
-}
+// Cache debug function disabled
 
 // Start the application
 initApp().catch(error => {

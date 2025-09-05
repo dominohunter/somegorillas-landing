@@ -53,6 +53,12 @@ export default defineConfig({
     fs: {
       strict: false,
     },
+    // Fix WebSocket connection issues
+    hmr: true,
+    host: 'localhost',
+    port: 5173,
+    strictPort: false,
+    cors: true,
   },
   
   // CSS optimization
