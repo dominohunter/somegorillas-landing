@@ -3,34 +3,34 @@ import gsap from "gsap";
 // Register ScrambleText plugin (loaded via CDN in index.html)
 gsap.registerPlugin(window.ScrambleTextPlugin);
 
-// List of assets to preload
+// List of critical assets to preload (prioritize above-the-fold content)
 const assetsToLoad = [
+  // Critical hero section assets
   "/backgrounds/Hero section.png",
+  "/nfts/hero-section/Goldie.webp", // Center/main NFT
+  "/Intersect.svg",
+  
+  // Other hero section NFTs (WebP format)
+  "/nfts/hero-section/Gangsta.webp",
+  "/nfts/hero-section/Zombie.webp",
+  "/nfts/hero-section/Wild One.webp",
+  "/nfts/hero-section/Lady.webp",
+  "/nfts/hero-section/Kiddo.webp",
+  "/nfts/hero-section/Sensei.webp",
+  "/nfts/hero-section/Nun.webp",
+  "/nfts/hero-section/Dude.webp",
+  
+  // Section 2 backgrounds and assets
   "/backgrounds/Section 2.png",
+  "/nfts/section-2/Closed mouth.png",
+  "/nfts/section-2/Open Mouth.png",
+  
+  // Other critical section backgrounds (loaded progressively)
   "/backgrounds/Section 3.png",
   "/backgrounds/Section 4.png",
   "/backgrounds/Section 5.png",
-  "/nfts/hero-section/Dude.png",
-  "/nfts/hero-section/Gangsta.png",
-  "/nfts/hero-section/Goldie.png",
-  "/nfts/hero-section/Kiddo.png",
-  "/nfts/hero-section/Lady.png",
-  "/nfts/hero-section/Nun.png",
-  "/nfts/hero-section/Sensei.png",
-  "/nfts/hero-section/Wild One.png",
-  "/nfts/hero-section/Zombie.png",
-  "/nfts/section-2/Closed mouth.png",
-  "/nfts/section-2/Open Mouth.png",
-  "/nfts/section-3.png",
-  "/nfts/section-4/1.png",
-  "/nfts/section-4/2.png",
-  "/nfts/section-4/3.png",
-  "/nfts/section-4/4.png",
-  "/nfts/section-4/5.png",
-  "/nfts/section-4/6.png",
-  "/nfts/section-4/7.png",
-  "/nfts/section-4/8.png",
-  "/section-3.png",
+  "/backgrounds/Section 6.png",
+  "/backgrounds/Section 7.png",
 ];
 
 export function preloadAssets(onProgress, onComplete) {

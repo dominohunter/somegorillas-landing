@@ -73,33 +73,26 @@ function initializeApp() {
   document.querySelector("#app").innerHTML = `
   <div class="flex flex-col justify-center">
     <section class="h-screen overflow-hidden flex items-center justify-center flex-col text-white" style="background-image: url('/backgrounds/Hero%20section.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
-
       <div class="flex flex-col gap-6 justify-center items-center mb-20 max-w-[1440px]">
-
-
         <h1 id="header" class="section text-[80px] font-bold text-center cartoon-shadow">Go <span id="banana">Bananas </span>with<br/> Some Gorillas</h1>
         <p class="font-pally text-xl leading-7 tracking-widest  text-center">Some Gorillas is a meme-fueled NFT project where you can mint, stake, and<br/> earn banana tokens by playing fun mini-games.</p>
         <button class="w-fit bg-gradient-to-b text-dark-primary border-2 border-dark-primary cartoon-boxshadow from-accent-secondary justify-center items-center gap-3 to-accent-primary py-4 pr-6 pl-5 flex flex-wrap-reverse ">
 <p class="text-dark-primary font-semibold text-[18px] leading-6">Go to Cave</p>
           <img src="/arrow-right.png"/>
         </button>
-
       </div>
-
-
     <img id="eclipse" class="absolute bottom-0 z-0 shrink-0 object-cover h-[320px]" src="/Intersect.svg"/>
 
-
       <div class="absolute bottom-0 h-5/16 flex max-w-[1440px] shrink-0 items-end justify-center">
-        <img id="ape1" draggable="false" src="/nfts/hero-section/Gangsta.png" alt="Dude" class="h-[160px] w-[160px] object-contain -mr-10 blur-xs" loading="lazy" />
-        <img  id="ape2" draggable="false" src="/nfts/hero-section/Zombie.png" alt="Gangsta" class="h-[200px] w-[200px] object-contain -mr-14 blur-[3px]" loading="lazy" />
-        <img  id="ape3"  draggable="false" src="/nfts/hero-section/Wild One.png" alt="Goldie" class="h-[240px] w-[240px] object-contain -mr-18 blur-[2px]" loading="lazy" />
-        <img  id="ape4"  draggable="false" src="/nfts/hero-section/Lady.png" alt="Kiddo" class="h-[280px] w-[280px] object-contain -mr-22 blur-[1px]" loading="lazy" />
-        <img  id="goldie"  draggable="false" src="/nfts/hero-section/Goldie.png" alt="Lady" class=" h-[320px] w-[320px] z-10 object-contain" loading="lazy" />
-        <img  id="ape5"  draggable="false" src="/nfts/hero-section/Kiddo.png" alt="Nun" class="h-[280px] w-[280px] object-contain -ml-22 blur-[1px]" loading="lazy" />
-        <img  id="ape6"  draggable="false" src="/nfts/hero-section/Sensei.png" alt="Sensei" class="h-[240px] w-[240px] object-contain -ml-18 blur-[2px]" loading="lazy" />
-        <img  id="ape7"  draggable="false" src="/nfts/hero-section/Nun.png" alt="Wild One" class="h-[200px] w-[200px] object-contain -ml-14 blur-[3px]" loading="lazy" />
-        <img  id="ape8"  draggable="false" src="/nfts/hero-section/Dude.png" alt="Zombie" class="h-[160px] w-[160px] object-contain -ml-10 blur-xs" loading="lazy" />
+        <img id="ape1" draggable="false" src="/nfts/hero-section/Gangsta.webp" alt="Dude" class="h-[160px] w-[160px] object-contain -mr-10 blur-xs" loading="lazy" />
+        <img  id="ape2" draggable="false" src="/nfts/hero-section/Zombie.webp" alt="Gangsta" class="h-[200px] w-[200px] object-contain -mr-14 blur-[3px]" loading="lazy" />
+        <img  id="ape3"  draggable="false" src="/nfts/hero-section/Wild One.webp" alt="Goldie" class="h-[240px] w-[240px] object-contain -mr-18 blur-[2px]" loading="lazy" />
+        <img  id="ape4"  draggable="false" src="/nfts/hero-section/Lady.webp" alt="Kiddo" class="h-[280px] w-[280px] object-contain -mr-22 blur-[1px]" loading="lazy" />
+        <img  id="goldie"  draggable="false" src="/nfts/hero-section/Goldie.webp" alt="Lady" class=" h-[320px] w-[320px] z-10 object-contain" loading="lazy" />
+        <img  id="ape5"  draggable="false" src="/nfts/hero-section/Kiddo.webp" alt="Nun" class="h-[280px] w-[280px] object-contain -ml-22 blur-[1px]" loading="lazy" />
+        <img  id="ape6"  draggable="false" src="/nfts/hero-section/Sensei.webp" alt="Sensei" class="h-[240px] w-[240px] object-contain -ml-18 blur-[2px]" loading="lazy" />
+        <img  id="ape7"  draggable="false" src="/nfts/hero-section/Nun.webp" alt="Wild One" class="h-[200px] w-[200px] object-contain -ml-14 blur-[3px]" loading="lazy" />
+        <img  id="ape8"  draggable="false" src="/nfts/hero-section/Dude.webp" alt="Zombie" class="h-[160px] w-[160px] object-contain -ml-10 blur-xs" loading="lazy" />
       </div>
 
        </section>
@@ -220,12 +213,12 @@ Some Gorillas is a meme-powered NFT project where each gorilla is a unique colle
                         Heads or Butts, the thrill never fails, every flip could change your fate.
                     </p>
                 </div>
-                <button class="bg-gradient-to-r cartoon-boxshadow from-accent-primary to-accent-secondary border-dark-primary border-2 rounded-2xl py-3 px-6 text-white font-semibold">
+                <button class="bg-gradient-to-r w-fit cartoon-boxshadow from-accent-primary to-accent-secondary border-dark-primary border-2 rounded-2xl py-3 px-6 text-white font-semibold">
                     Play now!
                 </button>
             </div>
         </div>
-        
+
         <div class="flex flex-1 rounded-[20px] p-6 gap-8 bg-translucent-light-72 border-2 border-dark-primary cartoon-boxshadow">
           <div class="w-[240px] h-[240px] rounded-2xl relative border-2 border-black aspect-square">
           <img src="/mouth-closed.png" class="object-cover absolute -bottom-[52px]"/>
@@ -240,7 +233,7 @@ Some Gorillas is a meme-powered NFT project where each gorilla is a unique colle
                         Step carefully, think wisely, one wrong move and it's game over.
                     </p>
                 </div>
-                <button disabled class="bg-gray-400 cartoon-boxshadow disabled:cursor-not-allowed border-dark-primary border-2 rounded-2xl py-3 px-6 text-white font-semibold opacity-60">
+                <button disabled w-fit class="bg-light-primary cartoon-boxshadow disabled:cursor-not-allowed border-dark-primary border-2 rounded-2xl py-3 px-6 text-white font-semibold opacity-60">
                     Coming soon
                 </button>
             </div>
@@ -261,7 +254,7 @@ Some Gorillas is a meme-powered NFT project where each gorilla is a unique colle
                         Drop the chip, chase the thrill, where will it land?
                     </p>
                 </div>
-                <button disabled class="bg-gray-400 cartoon-boxshadow disabled:cursor-not-allowed border-dark-primary border-2 rounded-2xl py-3 px-6 text-white font-semibold opacity-60">
+                <button disabled class="bg-light-primary w-fit cartoon-boxshadow disabled:cursor-not-allowed border-dark-primary border-2 rounded-2xl py-3 px-6 text-white font-semibold opacity-60">
                     Coming soon
                 </button>
             </div>
@@ -282,7 +275,7 @@ Some Gorillas is a meme-powered NFT project where each gorilla is a unique colle
                         Take off, soar high, and see how far you can fly.
                     </p>
                 </div>
-                <button disabled class="bg-gray-400 cartoon-boxshadow disabled:cursor-not-allowed border-dark-primary border-2 rounded-2xl py-3 px-6 text-white font-semibold opacity-60">
+                <button disabled class="bg-light-primary w-fit cartoon-boxshadow disabled:cursor-not-allowed border-dark-primary border-2 rounded-2xl py-3 px-6 text-white font-semibold opacity-60">
                     Coming soon
                 </button>
             </div>
@@ -295,7 +288,7 @@ Some Gorillas is a meme-powered NFT project where each gorilla is a unique colle
 
 
 <section style="background-image: url('/backgrounds/Section%206.png'); background-size: cover; background-position: center; background-repeat: no-repeat;" class="min-h-screen py-[80px] px-[60px] flex flex-col justify-center items-center">
-  
+
 
     <h2 class="text-[56px] font-semibold leading-[64px] cartoon-shadow mb-6">Roadmap</h2>
   <p class="font-pally text-white max-w-[640px] text-center text-[20px] font-medium leading-7 tracking-wider mb-12">
@@ -366,28 +359,28 @@ Some Gorillas is a meme-powered NFT project where each gorilla is a unique colle
     <!-- Center the top content manually -->
     <div class="flex flex-col items-center justify-center h-full">
         <h2 class="text-[56px] font-semibold leading-[64px] cartoon-shadow mb-6">FAQ</h2>
-        
+
       <div class="grid gap-6 grid-cols-3 grid-rows-2 w-full max-w-6xl">
     <div class="faq-item p-6 flex-1 flex border-2 rounded-xl border-dark-primary cartoon-boxshadow backdrop-blur-[20px] bg-translucent-light-64" onclick="showAnswer(0)">
         <p class="text-black text-[24px] font-semibold leading-8 tracking-wider">Why Some Gorillas?</p>
     </div>
-    
+
     <div class="faq-item p-6 flex-1 flex border-2 rounded-xl border-dark-primary cartoon-boxshadow backdrop-blur-[20px] bg-translucent-light-64" onclick="showAnswer(1)">
         <p class="text-black text-[24px] font-semibold leading-8 tracking-wider">Why Banana?</p>
     </div>
-    
+
     <div class="faq-item p-6 flex-1 flex border-2 rounded-xl border-dark-primary cartoon-boxshadow backdrop-blur-[20px] bg-translucent-light-64" onclick="showAnswer(2)">
         <p class="text-black text-[24px] font-semibold leading-8 tracking-wider">Coin flip for what?</p>
     </div>
-    
+
     <div class="faq-item p-6 flex-1 flex border-2 rounded-xl border-dark-primary cartoon-boxshadow backdrop-blur-[20px] bg-translucent-light-64" onclick="showAnswer(3)">
         <p class="text-black text-[24px] font-semibold leading-8 tracking-wider">Whats the road map?</p>
     </div>
-    
+
     <div class="faq-item p-6 flex-1 flex border-2 rounded-xl border-dark-primary cartoon-boxshadow backdrop-blur-[20px] bg-translucent-light-64" onclick="showAnswer(4)">
         <p class="text-black text-[24px] font-semibold leading-8 tracking-wider">1 Gorilla vs 100 men?</p>
     </div>
-    
+
     <div class="faq-item p-6 flex-1 flex border-2 rounded-xl border-dark-primary cartoon-boxshadow backdrop-blur-[20px] bg-translucent-light-64" onclick="showAnswer(5)">
         <p class="text-black text-[24px] font-semibold leading-8 tracking-wider">Have you ever made conversation with gorillas?</p>
     </div>
@@ -399,7 +392,7 @@ Some Gorillas is a meme-powered NFT project where each gorilla is a unique colle
    <div class=" w-full bottom-0 left-0 right-0 px-[200px] h-[200px]">
     <img id="mouth-closed" src="mouth-closed.png" class="mouth-transition absolute w-[400px] h-[400px] -bottom-[90px]"/>
     <img id="mouth-open" src="mouth-opened.png" class="mouth-transition absolute w-[400px] h-[400px] -bottom-[90px] opacity-0"/>
-    
+
     <div class="p-6 absolute bottom-20 left-[calc(50%+300px)] transform -translate-x-1/2 w-auto border-2 rounded-xl border-dark-primary cartoon-boxshadow backdrop-blur-[20px] bg-[#F6CD79]">
         <p id="answer-text" class="text-black text-[24px] font-semibold font-pally leading-8 tracking-wider">Click on the question to get your answer.</p>
     </div>
@@ -459,7 +452,7 @@ Some Gorillas is a meme-powered NFT project where each gorilla is a unique colle
 
   <div class="bg-[#F6CD79] flex w-[1320px] justify-center items-start gap-6 border-2 rounded-[20px] border-dark-primary cartoon-boxshadow">
   <div class="p-6 w-full ">
-    
+
       <div class="bg-[#29513B] flex flex-col p-5 gap-4 justify-center items-center self-stretch rounded-2xl cartoon-boxshadow border-2 border-dark-primary">
         <div class="flex justify-center">
           <p class="text-accent-primary font-pally text-[20px] font-bold leading-7 tracking-wider">Gorillak Alphabet</p>
@@ -509,9 +502,9 @@ Some Gorillas is a meme-powered NFT project where each gorilla is a unique colle
 
 
   <section class="bg-gradient-to-b from-accent-secondary to-accent-primary flex gap-20 justify-center items-center py-[80px] px-[60px]">
-    
+
 <div class="flex max-w-[1440px] gap-20 justify-center items-center">
-    
+
     <img src="banana-throw.gif" class="w-[480px] h-[480px] border-2 border-dark-primary rounded-2xl cartoon-boxshadow"/>
 
     <div class="flex flex-col gap-6">
@@ -528,15 +521,15 @@ Some Gorillas is a meme-powered NFT project where each gorilla is a unique colle
   </section>
 
 
-  <section class="h-screen overflow-hidden flex justify-center items-center  text-white" style="background-image: url('/backgrounds/Hero%20section.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+  <section class=" overflow-hidden flex justify-center items-center  text-white" style="background-image: url('/backgrounds/Hero%20section.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
 
     <div class="max-w-[1440px] flex items-center py-[80px] gap-[60px] px-[60px] justify-center">
 
-   
+
     <div class="p-6 rounded-2xl border-2 bg-translucent-light-80 border-dark-primary cartoon-shadowbox flex flex-col gap-4">
       <img src="/NFT.png" class="w-[320px] h-[320px] rounded-xl outline-2 outline-dark-primary"/>
       <p class="text-center font-pally text-dark-primary text-[20px] font-medium leading-7">
-        Gorillaz have gud plan.But we <br/> alwayz listen to Gorillas. Maybe <br/> the Some Gorillas are frens we make <br/> along the way 
+        Gorillaz have gud plan.But we <br/> alwayz listen to Gorillas. Maybe <br/> the Some Gorillas are frens we make <br/> along the way
       </p>
     </div>
     <div class="flex flex-col gap-6 flex-1">
@@ -1236,69 +1229,6 @@ Some Gorillas is a meme-powered NFT project where each gorilla is a unique colle
 
   setupMouthHover();
   setupDraggableNFTs();
-
-  let tl = gsap.timeline();
-
-  const apeOuter = ["#ape1", "#ape8"];
-  const apeOuter1 = ["#ape2", "#ape7"];
-  const apeOuter2 = ["#ape3", "#ape6"];
-  const apeOuter3 = ["#ape4", "#ape5"];
-
-  tl.set("#eclipse", {
-    y: 320,
-    scale: 1,
-    opacity: 0,
-  });
-
-  tl.set(apeOuter, {
-    opacity: 0,
-    y: -80,
-  });
-
-  tl.set(apeOuter1, {
-    opacity: 0,
-    y: -60,
-  });
-
-  tl.set(apeOuter2, {
-    opacity: 0,
-    y: -40,
-  });
-  tl.set(apeOuter3, {
-    opacity: 0,
-    y: -20,
-  });
-  tl.set("#goldie", {
-    opacity: 0,
-    y: -80,
-  });
-
-  tl.fromTo(
-    "#eclipse",
-    { opacity: 0, y: 120 },
-    {
-      y: 0,
-      scale: 1,
-      opacity: 1,
-      duration: 0.8,
-    },
-  );
-
-  tl.to(["#goldie", apeOuter3, apeOuter2, apeOuter1, apeOuter], {
-    y: 0,
-    opacity: 1,
-    stagger: 0.1, // Add stagger for sequential animation
-  });
-
-  const headerAnimation = gsap.to("#header", {
-    rotation: 360,
-    x: 10,
-    yPercent: 50,
-    paused: true,
-  });
-
-  // Ape animation with proper timing and scroll trigger
-  tl.play();
 
   // Play ape animation immediately on page start
   const counterElement = document.querySelector("#counter");

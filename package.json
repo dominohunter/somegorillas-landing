@@ -6,7 +6,10 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "build:analyze": "vite build --mode analyze",
+    "preview": "vite preview",
+    "lint": "echo 'Add linting tool later'",
+    "typecheck": "echo 'Add TypeScript checking later'"
   },
   "devDependencies": {
     "vite": "^7.1.2"
