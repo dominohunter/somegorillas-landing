@@ -1,13 +1,29 @@
 // App template as ES6 template literal for better build support
 export const appTemplate = `<div class="flex flex-col justify-center">
-
-
-
   <section class="hero-section h-screen overflow-hidden flex items-center justify-center flex-col text-white bg-cover bg-center bg-no-repeat" style="background-image: url('/backgrounds/Hero%20section.png')">
+  <nav class="flex w-full justify-center absolute top-0 left-0 right-0 z-20">
+      <div
+          class="max-w-[1440px] p-4 sm:p-6 flex bg-transparent justify-between w-full items-center"
+      >
+          <img src="/logo.png" class="w-8 sm:hidden" />
+          <img src="/logo-letter.svg" class="hidden sm:block " />
+        <div class="flex items-center gap-2 sm:gap-3">
+        <button onclick="window.open('https://dashboard.somegorillas.com', '_blank')" class="bg-light-primary border-none text-white h-12 lg:h-14 px-3 sm:px-5 font-bold text-sm sm:text-lg hover:text-accent-primary transition-colors duration-300 rounded">
+        Go to Cave
+        </button>
+        <button onclick="window.open('https://x.com/somegorillas', '_blank')" class="bg-light-primary h-12 w-16 lg:h-14 lg:w-18 flex items-center justify-center border-none text-white font-bold text-sm sm:text-lg hover:text-accent-primary transition-colors duration-300 rounded">
+          <img src="/Twitter.png" style="width: 24px; height: 24px; object-fit: contain;" class="lg:!w-7 lg:!h-7" />
+        </button>
+        <button onclick="window.open('https://discord.gg/somegorillas', '_blank')" class="bg-light-primary h-12 w-16 lg:h-14 lg:w-18 flex items-center justify-center border-none text-white font-bold text-sm sm:text-lg hover:text-accent-primary transition-colors duration-300 rounded">
+        <img src="/Dicscord.png" style="width: 24px; height: 24px; object-fit: contain;" class="lg:!w-7 lg:!h-7"/>
+        </button>
+        </div>
+      </div>
+  </nav>
     <div class="flex flex-col gap-6 sm:gap-8 justify-center items-center mb-12 sm:mb-16 md:mb-20 max-w-[1440px] px-4 sm:px-6 md:px-8 pt-8 sm:pt-12">
       <h1 id="header" class="section text-[clamp(1.75rem,7vw,80px)] font-bold text-center cartoon-shadow leading-tight">Go <span id="banana">Bananas </span>with<br/> Some Gorillas</h1>
       <p class="font-pally text-[clamp(0.95rem,2.5vw,20px)] leading-6 sm:leading-7 tracking-wide text-center max-w-4xl px-2">Some Gorillas is a meme-fueled NFT project where you can mint, stake, and<br class="hidden sm:block"/> earn banana tokens by playing fun mini-games.</p>
-      <button class="w-fit bg-gradient-to-b text-dark-primary mb-10 border-2 border-dark-primary cartoon-boxshadow from-accent-secondary justify-center items-center gap-3 to-accent-primary py-3 sm:py-4 pr-5 sm:pr-6 pl-4 sm:pl-5 flex flex-row items-center hover:scale-105 transition-transform duration-300">
+      <button onclick="window.open('https://dashboard.somegorillas.com', '_blank')" class="w-fit bg-gradient-to-b text-dark-primary mb-10 border-2 border-dark-primary cartoon-boxshadow from-accent-secondary justify-center items-center gap-3 to-accent-primary py-3 sm:py-4 pr-5 sm:pr-6 pl-4 sm:pl-5 flex flex-row items-center hover:scale-105 transition-transform duration-300">
         <p class="text-dark-primary font-semibold text-base sm:text-[18px] leading-6">Go to Cave</p>
         <img src="/arrow-right.png" alt="Arrow right" class="w-4 h-4 sm:w-5 sm:h-5"/>
       </button>
