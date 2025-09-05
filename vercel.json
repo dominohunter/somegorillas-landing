@@ -121,10 +121,5 @@
         }
       ]
     }
-  ],
-  "functions": {
-    "app/api/*.js": {
-      "maxDuration": 10
-    }
-  }
+  ]
 }
