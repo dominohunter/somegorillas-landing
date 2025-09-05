@@ -1,23 +1,22 @@
-// Optimized Service Worker for Some Gorillas Landing Page
-const CACHE_NAME = "somegorillas-v3";
+// Production-ready Service Worker optimized for Vercel
+const CACHE_NAME = "somegorillas-v4";
+const STATIC_CACHE = "somegorillas-static-v4";
+const RUNTIME_CACHE = "somegorillas-runtime-v4";
+
+// Critical assets - cache immediately on install
 const CRITICAL_ASSETS = [
   "/",
-  "/src/style.css",
-  "/src/main-optimized.js",
   "/ClashDisplay-Variable.ttf",
   "/Pally-Variable.ttf",
-  "/backgrounds/Hero%20section.png",
-  "/nfts/hero-section/Goldie.webp",
+  "/vite.svg",
+  "/arrow-right.png",
   "/Intersect.svg",
 ];
 
-const BACKGROUND_SYNC_ASSETS = [
-  "/backgrounds/Section%202.png",
-  "/backgrounds/Section%203.png",
-  "/backgrounds/Section%204.png",
-  "/backgrounds/Section%205.png",
-  "/backgrounds/Section%206.png",
-  "/backgrounds/Section%207.png",
+// Hero section assets - high priority
+const HERO_ASSETS = [
+  "/backgrounds/Hero%20section.png",
+  "/nfts/hero-section/Goldie.webp",
   "/nfts/hero-section/Gangsta.webp",
   "/nfts/hero-section/Zombie.webp",
   "/nfts/hero-section/Wild%20One.webp",
@@ -28,98 +27,242 @@ const BACKGROUND_SYNC_ASSETS = [
   "/nfts/hero-section/Dude.webp",
 ];
 
-// Install: Cache critical assets immediately
+// Other section backgrounds - cache on demand
+const SECTION_ASSETS = [
+  "/backgrounds/Section%202.png",
+  "/backgrounds/Section%203.png",
+  "/backgrounds/Section%204.png",
+  "/backgrounds/Section%205.png",
+  "/backgrounds/Section%206.png",
+  "/backgrounds/Section%207.png",
+  "/nfts/section-2/Closed%20mouth.png",
+  "/nfts/section-2/Open%20Mouth.png",
+  "/nfts/section-3.png",
+  "/nfts/section-4/1.png",
+  "/nfts/section-4/2.png",
+  "/nfts/section-4/3.png",
+  "/nfts/section-4/4.png",
+  "/nfts/section-4/5.png",
+  "/nfts/section-4/6.png",
+  "/nfts/section-4/7.png",
+  "/nfts/section-4/8.png",
+  "/section3/section-3.png",
+  "/flip-coin.png",
+  "/mouth-closed.png",
+  "/mouth-opened.png",
+  "/Teacher.png",
+  "/banana-throw.gif",
+  "/NFT.png",
+  "/Twitter.svg",
+  "/discord.svg",
+  "/doc.svg",
+  "/up-right.svg",
+];
+
+// Install: Aggressive caching for assets
 self.addEventListener("install", (event) => {
+  console.log("[SW] Installing...");
+  
   event.waitUntil(
-    caches.open(CACHE_NAME).then(async (cache) => {
+    Promise.all([
       // Cache critical assets first
-      await cache.addAll(CRITICAL_ASSETS);
+      caches.open(STATIC_CACHE).then(cache => {
+        console.log("[SW] Caching critical assets");
+        return cache.addAll(CRITICAL_ASSETS);
+      }),
       
-      // Cache background assets without blocking
-      setTimeout(() => {
-        BACKGROUND_SYNC_ASSETS.forEach(async (asset) => {
-          try {
-            await cache.add(asset);
-          } catch (error) {
-            console.log(`Failed to cache ${asset}:`, error);
-          }
-        });
-      }, 100);
+      // Cache hero assets (high priority)
+      caches.open(RUNTIME_CACHE).then(cache => {
+        console.log("[SW] Caching hero assets");
+        return Promise.allSettled(
+          HERO_ASSETS.map(asset => 
+            cache.add(asset).catch(err => {
+              console.warn(`[SW] Failed to cache ${asset}:`, err);
+              return null;
+            })
+          )
+        );
+      })
+    ]).then(() => {
+      console.log("[SW] Installation complete");
+      // Cache other assets in background after install
+      cacheOtherAssets();
     })
   );
+  
   self.skipWaiting();
 });
 
-// Activate: Clean old caches
+// Background caching for non-critical assets
+function cacheOtherAssets() {
+  caches.open(RUNTIME_CACHE).then(cache => {
+    console.log("[SW] Caching section assets in background");
+    SECTION_ASSETS.forEach(asset => {
+      cache.add(asset).catch(err => {
+        console.warn(`[SW] Failed to cache ${asset}:`, err);
+      });
+    });
+  });
+}
+
+// Activate: Clean old caches aggressively
 self.addEventListener("activate", (event) => {
+  console.log("[SW] Activating...");
+  
   event.waitUntil(
-    caches.keys().then((cacheNames) => {
+    caches.keys().then(cacheNames => {
       return Promise.all(
         cacheNames
-          .filter((cacheName) => cacheName !== CACHE_NAME)
-          .map((cacheName) => caches.delete(cacheName))
+          .filter(cacheName => 
+            cacheName !== STATIC_CACHE && 
+            cacheName !== RUNTIME_CACHE &&
+            (cacheName.startsWith('somegorillas-') || cacheName.startsWith('gorillas-'))
+          )
+          .map(cacheName => {
+            console.log("[SW] Deleting old cache:", cacheName);
+            return caches.delete(cacheName);
+          })
       );
+    }).then(() => {
+      console.log("[SW] Activation complete");
     })
   );
+  
   self.clients.claim();
 });
 
-// Fetch: Cache-first strategy with network fallback
+// Fetch: Smart caching strategy
 self.addEventListener("fetch", (event) => {
-  // Skip non-GET requests
-  if (event.request.method !== "GET") return;
+  const { request } = event;
+  const url = new URL(request.url);
   
-  // Skip external requests
-  if (!event.request.url.startsWith(self.location.origin)) return;
+  // Skip non-GET requests
+  if (request.method !== "GET") return;
+  
+  // Skip external requests (but allow same-origin)
+  if (url.origin !== location.origin) return;
+  
+  // Skip Chrome extension requests
+  if (url.protocol === 'chrome-extension:') return;
 
-  event.respondWith(
-    caches.match(event.request).then((cachedResponse) => {
-      if (cachedResponse) {
-        // Return cached version immediately
-        // Update cache in background if it's been a while
-        if (shouldUpdateCache(event.request)) {
-          updateCacheInBackground(event.request);
-        }
-        return cachedResponse;
-      }
-
-      // Not in cache, fetch from network
-      return fetch(event.request).then((response) => {
-        // Don't cache if not successful
-        if (!response || response.status !== 200 || response.type !== "basic") {
-          return response;
-        }
-
-        // Cache successful responses
-        const responseToCache = response.clone();
-        caches.open(CACHE_NAME).then((cache) => {
-          cache.put(event.request, responseToCache);
-        });
-
-        return response;
-      }).catch((error) => {
-        console.log("Fetch failed:", error);
-        // Could return a fallback page here
-        throw error;
-      });
-    })
-  );
+  // Different strategies for different asset types
+  if (isStaticAsset(url.pathname)) {
+    event.respondWith(cacheFirstStrategy(request));
+  } else if (isImageAsset(url.pathname)) {
+    event.respondWith(cacheFirstWithFallback(request));
+  } else if (isHTMLRequest(request)) {
+    event.respondWith(networkFirstStrategy(request));
+  } else {
+    event.respondWith(cacheFirstStrategy(request));
+  }
 });
 
-function shouldUpdateCache(request) {
-  // Update cache for HTML and critical assets every hour
-  const criticalAssets = ["/", "/src/main-optimized.js"];
-  return criticalAssets.some(asset => request.url.includes(asset));
-}
-
-function updateCacheInBackground(request) {
-  fetch(request).then((response) => {
-    if (response.status === 200) {
-      caches.open(CACHE_NAME).then((cache) => {
-        cache.put(request, response.clone());
+// Cache-first strategy for static assets
+async function cacheFirstStrategy(request) {
+  try {
+    const cachedResponse = await caches.match(request);
+    if (cachedResponse) {
+      return cachedResponse;
+    }
+    
+    const networkResponse = await fetch(request);
+    if (networkResponse.status === 200) {
+      const cache = await caches.open(RUNTIME_CACHE);
+      cache.put(request, networkResponse.clone()).catch(err => {
+        console.warn("[SW] Failed to cache:", request.url, err);
       });
     }
-  }).catch(() => {
-    // Silently fail background updates
-  });
+    
+    return networkResponse;
+  } catch (error) {
+    console.error("[SW] Cache-first failed:", request.url, error);
+    throw error;
+  }
+}
+
+// Cache-first with fallback for images
+async function cacheFirstWithFallback(request) {
+  try {
+    const cachedResponse = await caches.match(request);
+    if (cachedResponse) {
+      return cachedResponse;
+    }
+    
+    const networkResponse = await fetch(request);
+    if (networkResponse.status === 200) {
+      const cache = await caches.open(RUNTIME_CACHE);
+      cache.put(request, networkResponse.clone()).catch(err => {
+        console.warn("[SW] Failed to cache image:", request.url, err);
+      });
+    }
+    
+    return networkResponse;
+  } catch (error) {
+    console.error("[SW] Image fetch failed:", request.url, error);
+    // Could return a placeholder image here
+    throw error;
+  }
+}
+
+// Network-first for HTML (with cache fallback)
+async function networkFirstStrategy(request) {
+  try {
+    const networkResponse = await fetch(request);
+    if (networkResponse.status === 200) {
+      const cache = await caches.open(STATIC_CACHE);
+      cache.put(request, networkResponse.clone()).catch(err => {
+        console.warn("[SW] Failed to cache HTML:", request.url, err);
+      });
+    }
+    return networkResponse;
+  } catch (error) {
+    console.warn("[SW] Network failed, trying cache:", request.url);
+    const cachedResponse = await caches.match(request);
+    if (cachedResponse) {
+      return cachedResponse;
+    }
+    throw error;
+  }
+}
+
+// Helper functions
+function isStaticAsset(pathname) {
+  return /\.(js|css|woff2?|ttf|svg)$/i.test(pathname);
+}
+
+function isImageAsset(pathname) {
+  return /\.(png|jpg|jpeg|webp|gif|ico)$/i.test(pathname);
+}
+
+function isHTMLRequest(request) {
+  return request.headers.get('accept')?.includes('text/html');
+}
+
+// Message handling for cache updates
+self.addEventListener('message', (event) => {
+  if (event.data && event.data.type === 'SKIP_WAITING') {
+    self.skipWaiting();
+  }
+  
+  if (event.data && event.data.type === 'GET_CACHE_STATUS') {
+    getCacheStatus().then(status => {
+      event.ports[0].postMessage(status);
+    });
+  }
+});
+
+async function getCacheStatus() {
+  const cacheNames = await caches.keys();
+  const sizes = await Promise.all(
+    cacheNames.map(async name => {
+      const cache = await caches.open(name);
+      const keys = await cache.keys();
+      return { name, size: keys.length };
+    })
+  );
+  
+  return {
+    caches: sizes,
+    total: sizes.reduce((sum, cache) => sum + cache.size, 0)
+  };
 }

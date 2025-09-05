@@ -1,6 +1,6 @@
 // App template as ES6 template literal for better build support
 export const appTemplate = `<div class="flex flex-col justify-center">
-  <section class="h-screen overflow-hidden flex items-center justify-center flex-col text-white hero-section">
+  <section class="h-screen overflow-hidden flex items-center justify-center flex-col text-white hero-section" style="background-image: url('/backgrounds/Hero%20section.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
     <div class="flex flex-col gap-6 justify-center items-center mb-20 max-w-[1440px]">
       <h1 id="header" class="section text-[80px] font-bold text-center cartoon-shadow">Go <span id="banana">Bananas </span>with<br/> Some Gorillas</h1>
       <p class="font-pally text-xl leading-7 tracking-widest text-center">Some Gorillas is a meme-fueled NFT project where you can mint, stake, and<br/> earn banana tokens by playing fun mini-games.</p>
@@ -23,7 +23,7 @@ export const appTemplate = `<div class="flex flex-col justify-center">
     </div>
   </section>
 
-  <section class="section-2 h-screen/2 flex items-center py-20 px-16 gap-20 justify-center">
+  <section class="section-2 h-screen/2 flex items-center py-20 px-16 gap-20 justify-center" style="background-image: url('/backgrounds/Section%202.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
     <div id="mouth-container" class="relative w-[320px] h-[320px] cartoon-boxshadow border-2 rounded-t-full border-black cursor-pointer">
       <div id="circle-bg" class="absolute inset-0 w-full h-full rounded-t-full bg-yellow-500 transition-colors duration-200"></div>
       <img id="closed-mouth" src="/nfts/section-2/Closed mouth.png" alt="Closed mouth" class="absolute inset-0 w-full h-full object-contain z-10" loading="lazy" />
@@ -37,7 +37,7 @@ export const appTemplate = `<div class="flex flex-col justify-center">
     </div>
   </section>
 
-  <section class="section-3 h-screen">
+  <section class="section-3 h-screen" style="background-image: url('/backgrounds/Section%203.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
     <div class="w-full flex justify-center items-center">
       <div class="max-w-[1440px] h-full w-full flex gap-6 py-[80px] px-[60px] items-start justify-center text-white">
         <div class="grid grid-cols-3 grid-rows-[1fr_400px] flex-1 w-full h-full gap-6">
@@ -91,7 +91,7 @@ export const appTemplate = `<div class="flex flex-col justify-center">
     </div>
   </section>
 
-  <section class="section-4 h-screen items-center justify-center py-[80px] gap-12 flex-col text-white flex">
+  <section class="section-4 h-screen items-center justify-center py-[80px] gap-12 flex-col text-white flex" style="background-image: url('/backgrounds/Section%204.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
     <h2 class="text-[56px] font-semibold leading-[64px] cartoon-shadow">Fresh Out of the Jungle</h2>
     <div class="grid grid-cols-3 gap-4" id="nft-grid">
       <img src="/nfts/section-4/1.png" alt="NFT 1" class="apes border-2 border-dark-primary w-auto h-[186px] object-cover rounded-lg cartoon-boxshadow" loading="lazy" />
@@ -109,7 +109,7 @@ export const appTemplate = `<div class="flex flex-col justify-center">
     </p>
   </section>
 
-  <section class="section-5 py-[80px] px-[60px] gap-12 h-screen flex justify-center items-center">
+  <section class="section-5 py-[80px] px-[60px] gap-12 h-screen flex justify-center items-center" style="background-image: url('/backgrounds/Section%205.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
     <div class="flex flex-col max-w-[1440px] gap-10 justify-center items-center">
       <p class="text-[56px] leading-16 font-semibold text-white cartoon-shadow mb-10">Minigames</p>
       <div class="flex gap-10">
@@ -181,7 +181,7 @@ export const appTemplate = `<div class="flex flex-col justify-center">
     </div>
   </section>
 
-  <section class="section-6 min-h-screen py-[80px] px-[60px] flex flex-col justify-center items-center">
+  <section class="section-6 min-h-screen py-[80px] px-[60px] flex flex-col justify-center items-center" style="background-image: url('/backgrounds/Section%206.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
     <h2 class="text-[56px] font-semibold leading-[64px] cartoon-shadow mb-6">Roadmap</h2>
     <p class="font-pally text-white max-w-[640px] text-center text-[20px] font-medium leading-7 tracking-wider mb-12">
       We're crafting an exciting DAO NFT project on Somnia with fun games, real rewards, and community control. Here's a quick look at the path ahead. Our Discord is the best place to keep updated.
@@ -230,27 +230,27 @@ export const appTemplate = `<div class="flex flex-col justify-center">
     </div>
   </section>
 
-  <section class="section-7 h-screen relative flex justify-center items-center py-[80px] px-[60px]">
+  <section class="section-7 h-screen relative flex justify-center items-center py-[80px] px-[60px]" style="background-image: url('/backgrounds/Section%207.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
     <div class="flex flex-col max-w-[1440px] gap-20 justify-center items-center">
       <div class="flex flex-col items-center justify-center h-full">
         <h2 class="text-[56px] font-semibold leading-[64px] cartoon-shadow mb-6">FAQ</h2>
         <div class="grid gap-6 grid-cols-3 grid-rows-2 w-full max-w-6xl">
-          <div class="faq-item p-6 flex-1 flex border-2 rounded-xl border-dark-primary cartoon-boxshadow backdrop-blur-[20px] bg-translucent-light-64" onclick="showAnswer(0)">
+          <div class="faq-item p-6 flex-1 flex border-2 rounded-xl border-dark-primary cartoon-boxshadow backdrop-blur-[20px] bg-translucent-light-64" data-faq-index="0">
             <p class="text-black text-[24px] font-semibold leading-8 tracking-wider">Why Some Gorillas?</p>
           </div>
-          <div class="faq-item p-6 flex-1 flex border-2 rounded-xl border-dark-primary cartoon-boxshadow backdrop-blur-[20px] bg-translucent-light-64" onclick="showAnswer(1)">
+          <div class="faq-item p-6 flex-1 flex border-2 rounded-xl border-dark-primary cartoon-boxshadow backdrop-blur-[20px] bg-translucent-light-64" data-faq-index="1">
             <p class="text-black text-[24px] font-semibold leading-8 tracking-wider">Why Banana?</p>
           </div>
-          <div class="faq-item p-6 flex-1 flex border-2 rounded-xl border-dark-primary cartoon-boxshadow backdrop-blur-[20px] bg-translucent-light-64" onclick="showAnswer(2)">
+          <div class="faq-item p-6 flex-1 flex border-2 rounded-xl border-dark-primary cartoon-boxshadow backdrop-blur-[20px] bg-translucent-light-64" data-faq-index="2">
             <p class="text-black text-[24px] font-semibold leading-8 tracking-wider">Coin flip for what?</p>
           </div>
-          <div class="faq-item p-6 flex-1 flex border-2 rounded-xl border-dark-primary cartoon-boxshadow backdrop-blur-[20px] bg-translucent-light-64" onclick="showAnswer(3)">
+          <div class="faq-item p-6 flex-1 flex border-2 rounded-xl border-dark-primary cartoon-boxshadow backdrop-blur-[20px] bg-translucent-light-64" data-faq-index="3">
             <p class="text-black text-[24px] font-semibold leading-8 tracking-wider">Whats the road map?</p>
           </div>
-          <div class="faq-item p-6 flex-1 flex border-2 rounded-xl border-dark-primary cartoon-boxshadow backdrop-blur-[20px] bg-translucent-light-64" onclick="showAnswer(4)">
+          <div class="faq-item p-6 flex-1 flex border-2 rounded-xl border-dark-primary cartoon-boxshadow backdrop-blur-[20px] bg-translucent-light-64" data-faq-index="4">
             <p class="text-black text-[24px] font-semibold leading-8 tracking-wider">1 Gorilla vs 100 men?</p>
           </div>
-          <div class="faq-item p-6 flex-1 flex border-2 rounded-xl border-dark-primary cartoon-boxshadow backdrop-blur-[20px] bg-translucent-light-64" onclick="showAnswer(5)">
+          <div class="faq-item p-6 flex-1 flex border-2 rounded-xl border-dark-primary cartoon-boxshadow backdrop-blur-[20px] bg-translucent-light-64" data-faq-index="5">
             <p class="text-black text-[24px] font-semibold leading-8 tracking-wider">Have you ever made conversation with gorillas?</p>
           </div>
         </div>
@@ -353,7 +353,7 @@ export const appTemplate = `<div class="flex flex-col justify-center">
     </div>
   </section>
 
-  <section class="overflow-hidden flex justify-center items-center text-white final-section">
+  <section class="overflow-hidden flex justify-center items-center text-white final-section" style="background-image: url('/backgrounds/Hero%20section.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
     <div class="max-w-[1440px] flex items-center py-[80px] gap-[60px] px-[60px] justify-center">
       <div class="p-6 rounded-2xl border-2 bg-translucent-light-80 border-dark-primary cartoon-shadowbox flex flex-col gap-4">
         <img src="/NFT.png" class="w-[320px] h-[320px] rounded-xl outline-2 outline-dark-primary" alt="NFT"/>

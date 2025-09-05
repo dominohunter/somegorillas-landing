@@ -329,3 +329,92 @@ input:focus-visible {
   outline: 2px solid var(--accent-primary);
   outline-offset: 2px;
 }
+
+/* Animation performance optimizations */
+.hero-section * {
+  will-change: transform;
+}
+
+/* Smooth transforms for hero elements */
+#header,
+#banana,
+#eclipse,
+[id^="ape"],
+#goldie,
+button {
+  backface-visibility: hidden;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+/* Particle effects container */
+.particle-container {
+  overflow: hidden;
+}
+
+/* Enhanced hero section styles */
+.hero-section {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Gorilla hover enhancement */
+[id^="ape"]:hover,
+#goldie:hover {
+  filter: brightness(1.1) contrast(1.1);
+  transition: filter 0.3s ease;
+}
+
+/* Button enhancement */
+button {
+  transform-origin: center center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+button:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2), 4px 4px 0px var(--dark-primary);
+}
+
+/* Text rendering optimization */
+#header {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Smooth scrolling enhancement */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Responsive animation adjustments */
+@media (max-width: 768px) {
+  .hero-section * {
+    will-change: auto;
+  }
+  
+  [id^="ape"],
+  #goldie {
+    transform: none !important;
+  }
+}
+
+/* Preload animation states */
+.loading #header,
+.loading .font-pally,
+.loading button,
+.loading #eclipse,
+.loading [id^="ape"],
+.loading #goldie {
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+/* GPU acceleration for smooth animations */
+.hero-section,
+#header,
+#banana,
+[id^="ape"],
+#goldie {
+  transform: translateZ(0);
+}

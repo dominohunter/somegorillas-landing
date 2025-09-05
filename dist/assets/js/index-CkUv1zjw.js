@@ -1,4 +1,4 @@
-import{L as p,g as s}from"./vendor-DXxDvLDe.js";import{s as x,a as g,b as f,c as b}from"./ui-BQsk_Omi.js";(function(){const r=document.createElement("link").relList;if(r&&r.supports&&r.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))o(t);new MutationObserver(t=>{for(const a of t)if(a.type==="childList")for(const i of a.addedNodes)i.tagName==="LINK"&&i.rel==="modulepreload"&&o(i)}).observe(document,{childList:!0,subtree:!0});function l(t){const a={};return t.integrity&&(a.integrity=t.integrity),t.referrerPolicy&&(a.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?a.credentials="include":t.crossOrigin==="anonymous"?a.credentials="omit":a.credentials="same-origin",a}function o(t){if(t.ep)return;t.ep=!0;const a=l(t);fetch(t.href,a)}})();const u=new p({autoRaf:!0});s.registerPlugin(window.ScrambleTextPlugin);const n=["/backgrounds/Hero section.png","/nfts/hero-section/Goldie.webp","/Intersect.svg","/nfts/hero-section/Gangsta.webp","/nfts/hero-section/Zombie.webp","/nfts/hero-section/Wild One.webp","/nfts/hero-section/Lady.webp","/nfts/hero-section/Kiddo.webp","/nfts/hero-section/Sensei.webp","/nfts/hero-section/Nun.webp","/nfts/hero-section/Dude.webp","/backgrounds/Section 2.png","/nfts/section-2/Closed mouth.png","/nfts/section-2/Open Mouth.png","/backgrounds/Section 3.png","/backgrounds/Section 4.png","/backgrounds/Section 5.png","/backgrounds/Section 6.png","/backgrounds/Section 7.png"];function h(e,r){let l=0;const o=n.length;if(o===0){r();return}n.forEach(t=>{const a=new Image,i=()=>{l++;const c=l/o*100;e(c),l===o&&r()};a.onload=i,a.onerror=i,a.src=t})}function m(){document.body.insertAdjacentHTML("afterbegin",`
+import{L as p,g as l}from"./vendor-DXxDvLDe.js";import{S as x,s as g,a as b,b as f,c as u}from"./ui-DK4oZZMp.js";(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const a of document.querySelectorAll('link[rel="modulepreload"]'))i(a);new MutationObserver(a=>{for(const o of a)if(o.type==="childList")for(const n of o.addedNodes)n.tagName==="LINK"&&n.rel==="modulepreload"&&i(n)}).observe(document,{childList:!0,subtree:!0});function r(a){const o={};return a.integrity&&(o.integrity=a.integrity),a.referrerPolicy&&(o.referrerPolicy=a.referrerPolicy),a.crossOrigin==="use-credentials"?o.credentials="include":a.crossOrigin==="anonymous"?o.credentials="omit":o.credentials="same-origin",o}function i(a){if(a.ep)return;a.ep=!0;const o=r(a);fetch(a.href,o)}})();const m=new p({autoRaf:!0});l.registerPlugin(window.ScrambleTextPlugin);const s=["/backgrounds/Hero section.png","/nfts/hero-section/Goldie.webp","/Intersect.svg","/nfts/hero-section/Gangsta.webp","/nfts/hero-section/Zombie.webp","/nfts/hero-section/Wild One.webp","/nfts/hero-section/Lady.webp","/nfts/hero-section/Kiddo.webp","/nfts/hero-section/Sensei.webp","/nfts/hero-section/Nun.webp","/nfts/hero-section/Dude.webp","/backgrounds/Section 2.png","/nfts/section-2/Closed mouth.png","/nfts/section-2/Open Mouth.png","/backgrounds/Section 3.png","/backgrounds/Section 4.png","/backgrounds/Section 5.png","/backgrounds/Section 6.png","/backgrounds/Section 7.png"];function h(e,t){let r=0;const i=s.length;if(i===0){t();return}s.forEach(a=>{const o=new Image,n=()=>{r++;const c=r/i*100;e(c),r===i&&t()};o.onload=n,o.onerror=n,o.src=a})}function w(){document.body.insertAdjacentHTML("afterbegin",`
     <div id="loader" style="background-image: url('/backgrounds/Hero%20section.png'); background-size: cover; background-position: center; background-repeat: no-repeat;" class="fixed inset-0 z-50 flex items-center justify-center overflow-hidden" >
       <div class="relative">
         <!-- SVG Loader with progress fill -->
@@ -64,8 +64,8 @@ import{L as p,g as s}from"./vendor-DXxDvLDe.js";import{s as x,a as g,b as f,c as
 
       <!-- Background particles -->
     </div>
-  `);const r=s.timeline();return r.to(".progress-fill",{width:400,duration:6,ease:"power2.out"},0).to("#status-text",{scrambleText:{text:"loading assets...",chars:"01",speed:.5},duration:1},.5).to("#status-text",{scrambleText:{text:"compiling scripts...",chars:".JS",speed:.3},duration:1.2},1.8).to("#status-text",{scrambleText:{text:"loading fonts...",chars:"lowerCase",speed:.4},duration:1},3.2).to("#status-text",{scrambleText:{text:"initializing components...",chars:"upperCase",speed:.3},duration:1.3},4.5).to("#status-text",{scrambleText:{text:"ready!",chars:"!@#$%",speed:.2},duration:.8},5.8),r}function w(){const e=document.getElementById("loader");if(e)return s.to(e,{opacity:0,scale:.8,duration:.8,ease:"power2.inOut",onComplete:()=>{e.remove()}})}const y=`<div class="flex flex-col justify-center">
-  <section class="h-screen overflow-hidden flex items-center justify-center flex-col text-white hero-section">
+  `);const t=l.timeline();return t.to(".progress-fill",{width:400,duration:6,ease:"power2.out"},0).to("#status-text",{scrambleText:{text:"loading assets...",chars:"01",speed:.5},duration:1},.5).to("#status-text",{scrambleText:{text:"compiling scripts...",chars:".JS",speed:.3},duration:1.2},1.8).to("#status-text",{scrambleText:{text:"loading fonts...",chars:"lowerCase",speed:.4},duration:1},3.2).to("#status-text",{scrambleText:{text:"initializing components...",chars:"upperCase",speed:.3},duration:1.3},4.5).to("#status-text",{scrambleText:{text:"ready!",chars:"!@#$%",speed:.2},duration:.8},5.8),t}function y(){const e=document.getElementById("loader");if(e)return l.to(e,{opacity:0,scale:.8,duration:.8,ease:"power2.inOut",onComplete:()=>{e.remove()}})}const v=`<div class="flex flex-col justify-center">
+  <section class="h-screen overflow-hidden flex items-center justify-center flex-col text-white hero-section" style="background-image: url('/backgrounds/Hero%20section.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
     <div class="flex flex-col gap-6 justify-center items-center mb-20 max-w-[1440px]">
       <h1 id="header" class="section text-[80px] font-bold text-center cartoon-shadow">Go <span id="banana">Bananas </span>with<br/> Some Gorillas</h1>
       <p class="font-pally text-xl leading-7 tracking-widest text-center">Some Gorillas is a meme-fueled NFT project where you can mint, stake, and<br/> earn banana tokens by playing fun mini-games.</p>
@@ -88,7 +88,7 @@ import{L as p,g as s}from"./vendor-DXxDvLDe.js";import{s as x,a as g,b as f,c as
     </div>
   </section>
 
-  <section class="section-2 h-screen/2 flex items-center py-20 px-16 gap-20 justify-center">
+  <section class="section-2 h-screen/2 flex items-center py-20 px-16 gap-20 justify-center" style="background-image: url('/backgrounds/Section%202.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
     <div id="mouth-container" class="relative w-[320px] h-[320px] cartoon-boxshadow border-2 rounded-t-full border-black cursor-pointer">
       <div id="circle-bg" class="absolute inset-0 w-full h-full rounded-t-full bg-yellow-500 transition-colors duration-200"></div>
       <img id="closed-mouth" src="/nfts/section-2/Closed mouth.png" alt="Closed mouth" class="absolute inset-0 w-full h-full object-contain z-10" loading="lazy" />
@@ -102,7 +102,7 @@ import{L as p,g as s}from"./vendor-DXxDvLDe.js";import{s as x,a as g,b as f,c as
     </div>
   </section>
 
-  <section class="section-3 h-screen">
+  <section class="section-3 h-screen" style="background-image: url('/backgrounds/Section%203.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
     <div class="w-full flex justify-center items-center">
       <div class="max-w-[1440px] h-full w-full flex gap-6 py-[80px] px-[60px] items-start justify-center text-white">
         <div class="grid grid-cols-3 grid-rows-[1fr_400px] flex-1 w-full h-full gap-6">
@@ -156,7 +156,7 @@ import{L as p,g as s}from"./vendor-DXxDvLDe.js";import{s as x,a as g,b as f,c as
     </div>
   </section>
 
-  <section class="section-4 h-screen items-center justify-center py-[80px] gap-12 flex-col text-white flex">
+  <section class="section-4 h-screen items-center justify-center py-[80px] gap-12 flex-col text-white flex" style="background-image: url('/backgrounds/Section%204.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
     <h2 class="text-[56px] font-semibold leading-[64px] cartoon-shadow">Fresh Out of the Jungle</h2>
     <div class="grid grid-cols-3 gap-4" id="nft-grid">
       <img src="/nfts/section-4/1.png" alt="NFT 1" class="apes border-2 border-dark-primary w-auto h-[186px] object-cover rounded-lg cartoon-boxshadow" loading="lazy" />
@@ -174,7 +174,7 @@ import{L as p,g as s}from"./vendor-DXxDvLDe.js";import{s as x,a as g,b as f,c as
     </p>
   </section>
 
-  <section class="section-5 py-[80px] px-[60px] gap-12 h-screen flex justify-center items-center">
+  <section class="section-5 py-[80px] px-[60px] gap-12 h-screen flex justify-center items-center" style="background-image: url('/backgrounds/Section%205.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
     <div class="flex flex-col max-w-[1440px] gap-10 justify-center items-center">
       <p class="text-[56px] leading-16 font-semibold text-white cartoon-shadow mb-10">Minigames</p>
       <div class="flex gap-10">
@@ -246,7 +246,7 @@ import{L as p,g as s}from"./vendor-DXxDvLDe.js";import{s as x,a as g,b as f,c as
     </div>
   </section>
 
-  <section class="section-6 min-h-screen py-[80px] px-[60px] flex flex-col justify-center items-center">
+  <section class="section-6 min-h-screen py-[80px] px-[60px] flex flex-col justify-center items-center" style="background-image: url('/backgrounds/Section%206.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
     <h2 class="text-[56px] font-semibold leading-[64px] cartoon-shadow mb-6">Roadmap</h2>
     <p class="font-pally text-white max-w-[640px] text-center text-[20px] font-medium leading-7 tracking-wider mb-12">
       We're crafting an exciting DAO NFT project on Somnia with fun games, real rewards, and community control. Here's a quick look at the path ahead. Our Discord is the best place to keep updated.
@@ -295,27 +295,27 @@ import{L as p,g as s}from"./vendor-DXxDvLDe.js";import{s as x,a as g,b as f,c as
     </div>
   </section>
 
-  <section class="section-7 h-screen relative flex justify-center items-center py-[80px] px-[60px]">
+  <section class="section-7 h-screen relative flex justify-center items-center py-[80px] px-[60px]" style="background-image: url('/backgrounds/Section%207.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
     <div class="flex flex-col max-w-[1440px] gap-20 justify-center items-center">
       <div class="flex flex-col items-center justify-center h-full">
         <h2 class="text-[56px] font-semibold leading-[64px] cartoon-shadow mb-6">FAQ</h2>
         <div class="grid gap-6 grid-cols-3 grid-rows-2 w-full max-w-6xl">
-          <div class="faq-item p-6 flex-1 flex border-2 rounded-xl border-dark-primary cartoon-boxshadow backdrop-blur-[20px] bg-translucent-light-64" onclick="showAnswer(0)">
+          <div class="faq-item p-6 flex-1 flex border-2 rounded-xl border-dark-primary cartoon-boxshadow backdrop-blur-[20px] bg-translucent-light-64" data-faq-index="0">
             <p class="text-black text-[24px] font-semibold leading-8 tracking-wider">Why Some Gorillas?</p>
           </div>
-          <div class="faq-item p-6 flex-1 flex border-2 rounded-xl border-dark-primary cartoon-boxshadow backdrop-blur-[20px] bg-translucent-light-64" onclick="showAnswer(1)">
+          <div class="faq-item p-6 flex-1 flex border-2 rounded-xl border-dark-primary cartoon-boxshadow backdrop-blur-[20px] bg-translucent-light-64" data-faq-index="1">
             <p class="text-black text-[24px] font-semibold leading-8 tracking-wider">Why Banana?</p>
           </div>
-          <div class="faq-item p-6 flex-1 flex border-2 rounded-xl border-dark-primary cartoon-boxshadow backdrop-blur-[20px] bg-translucent-light-64" onclick="showAnswer(2)">
+          <div class="faq-item p-6 flex-1 flex border-2 rounded-xl border-dark-primary cartoon-boxshadow backdrop-blur-[20px] bg-translucent-light-64" data-faq-index="2">
             <p class="text-black text-[24px] font-semibold leading-8 tracking-wider">Coin flip for what?</p>
           </div>
-          <div class="faq-item p-6 flex-1 flex border-2 rounded-xl border-dark-primary cartoon-boxshadow backdrop-blur-[20px] bg-translucent-light-64" onclick="showAnswer(3)">
+          <div class="faq-item p-6 flex-1 flex border-2 rounded-xl border-dark-primary cartoon-boxshadow backdrop-blur-[20px] bg-translucent-light-64" data-faq-index="3">
             <p class="text-black text-[24px] font-semibold leading-8 tracking-wider">Whats the road map?</p>
           </div>
-          <div class="faq-item p-6 flex-1 flex border-2 rounded-xl border-dark-primary cartoon-boxshadow backdrop-blur-[20px] bg-translucent-light-64" onclick="showAnswer(4)">
+          <div class="faq-item p-6 flex-1 flex border-2 rounded-xl border-dark-primary cartoon-boxshadow backdrop-blur-[20px] bg-translucent-light-64" data-faq-index="4">
             <p class="text-black text-[24px] font-semibold leading-8 tracking-wider">1 Gorilla vs 100 men?</p>
           </div>
-          <div class="faq-item p-6 flex-1 flex border-2 rounded-xl border-dark-primary cartoon-boxshadow backdrop-blur-[20px] bg-translucent-light-64" onclick="showAnswer(5)">
+          <div class="faq-item p-6 flex-1 flex border-2 rounded-xl border-dark-primary cartoon-boxshadow backdrop-blur-[20px] bg-translucent-light-64" data-faq-index="5">
             <p class="text-black text-[24px] font-semibold leading-8 tracking-wider">Have you ever made conversation with gorillas?</p>
           </div>
         </div>
@@ -418,7 +418,7 @@ import{L as p,g as s}from"./vendor-DXxDvLDe.js";import{s as x,a as g,b as f,c as
     </div>
   </section>
 
-  <section class="overflow-hidden flex justify-center items-center text-white final-section">
+  <section class="overflow-hidden flex justify-center items-center text-white final-section" style="background-image: url('/backgrounds/Hero%20section.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
     <div class="max-w-[1440px] flex items-center py-[80px] gap-[60px] px-[60px] justify-center">
       <div class="p-6 rounded-2xl border-2 bg-translucent-light-80 border-dark-primary cartoon-shadowbox flex flex-col gap-4">
         <img src="/NFT.png" class="w-[320px] h-[320px] rounded-xl outline-2 outline-dark-primary" alt="NFT"/>
@@ -457,5 +457,20 @@ import{L as p,g as s}from"./vendor-DXxDvLDe.js";import{s as x,a as g,b as f,c as
       </div>
     </div>
   </section>
-</div>`;function v(e,r){return r?(r.innerHTML=e,!0):(console.error("Invalid template or target element"),!1)}function k(e="#app"){const r=document.querySelector(e);return r?v(y,r):(console.error("Target element not found:",e),!1)}"serviceWorker"in navigator&&navigator.serviceWorker.register("/sw.js").catch(e=>{console.log("Service worker registration failed:",e)});function j(){return caches.match("/backgrounds/Hero%20section.png").then(e=>!!e)}async function A(){await j()?(console.log("Assets cached, skipping loader"),d()):(console.log("First visit, showing loader"),T())}function T(){const e=m();let r=!1,l=!1;h(t=>{console.log(`Loading progress: ${t}%`)},()=>{r=!0,o()}),e.eventCallback("onComplete",()=>{l=!0,o()});function o(){r&&l&&setTimeout(()=>{w(),d()},300)}}function d(){if(u.start(),!k("#app")){console.error("Failed to load app template");return}setTimeout(()=>{x(),g(),f(),b()},100),console.log("App initialization complete")}A().catch(e=>{console.error("App initialization failed:",e)});
-//# sourceMappingURL=index-DjEXpYdz.js.map
+</div>`;function k(e,t){return t?(t.innerHTML=e,!0):(console.error("Invalid template or target element"),!1)}function j(e="#app"){const t=document.querySelector(e);return t?k(v,t):(console.error("Target element not found:",e),!1)}l.registerPlugin(x);function S(){l.set("#header",{y:40,opacity:0}),l.set("#header #banana",{scale:1,transformOrigin:"center center"}),l.set(".font-pally",{y:20,opacity:0}),l.set("button",{y:20,opacity:0}),l.set("#eclipse",{opacity:0});const e=["#ape1","#ape2","#ape3","#ape4","#goldie","#ape5","#ape6","#ape7","#ape8"];e.forEach(r=>{l.set(r,{y:30,opacity:0})}),l.timeline({delay:.3}).to("#header",{duration:.8,y:0,opacity:1,ease:"power2.out"}).to("#banana",{duration:.4,scale:1.05,ease:"power2.out"},"-=0.3").to("#banana",{duration:.3,scale:1,ease:"power2.out"}).to(".font-pally",{duration:.6,y:0,opacity:1,ease:"power2.out"},"-=0.4").to("button",{duration:.6,y:0,opacity:1,ease:"power2.out"},"-=0.3").to("#eclipse",{duration:.8,opacity:.8,ease:"power2.out"},"-=0.5").to(e,{duration:.8,y:0,opacity:1,ease:"power2.out",stagger:{amount:.4,from:"center"}},"-=0.4"),T(),addCleanHoverEffects(),addSmoothScrollEffects()}function T(){l.to("#banana",{scale:1.02,duration:3,ease:"sine.inOut",repeat:-1,yoyo:!0}),l.to("#eclipse",{rotation:2,duration:12,ease:"none",repeat:-1,yoyo:!0})}function z(){const e=document.createElement("div");e.className="particle-container",e.style.cssText=`
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 5;
+  `,document.querySelector(".hero-section").appendChild(e);for(let t=0;t<20;t++){const r=document.createElement("div");r.style.cssText=`
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: #FFCE3C;
+      border-radius: 50%;
+      opacity: 0;
+    `,e.appendChild(r),l.set(r,{x:`random(0, ${window.innerWidth})`,y:`random(${window.innerHeight}, ${window.innerHeight+100})`}),l.to(r,{y:-100,opacity:1,duration:"random(3, 6)",ease:"none",repeat:-1,delay:"random(0, 3)"})}}"serviceWorker"in navigator&&navigator.serviceWorker.register("/sw.js").then(e=>{console.log("[Main] Service Worker registered successfully:",e),e.addEventListener("updatefound",()=>{const t=e.installing;t.addEventListener("statechange",()=>{t.state==="installed"&&navigator.serviceWorker.controller&&console.log("[Main] New SW installed, prompting user to refresh")})})}).catch(e=>{console.error("[Main] Service worker registration failed:",e)});function A(){return caches.match("/backgrounds/Hero%20section.png").then(e=>!!e)}async function q(){await A()?(console.log("Assets cached, skipping loader"),d()):(console.log("First visit, showing loader"),F())}function F(){const e=w();let t=!1,r=!1;h(a=>{console.log(`Loading progress: ${a}%`)},()=>{t=!0,i()}),e.eventCallback("onComplete",()=>{r=!0,i()});function i(){t&&r&&setTimeout(()=>{y(),d()},300)}}function d(){if(m.start(),!j("#app")){console.error("Failed to load app template");return}setTimeout(()=>{S(),z(),g(),b(),f(),u()},100),console.log("App initialization complete")}q().catch(e=>{console.error("App initialization failed:",e)});
+//# sourceMappingURL=index-CkUv1zjw.js.map

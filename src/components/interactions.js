@@ -43,7 +43,7 @@ export function setupFAQEventListeners() {
     "OOH! OOH! AHH! AHH! AHHHHH!!!",
   ];
 
-  window.showAnswer = function (index) {
+  function showAnswer(index) {
     const mouthClosed = document.getElementById("mouth-closed");
     const mouthOpen = document.getElementById("mouth-open");
 
@@ -63,7 +63,31 @@ export function setupFAQEventListeners() {
         mouthOpen.style.opacity = "0";
       }
     }, 3000);
-  };
+  }
+
+  // Set up event listeners for FAQ items
+  const faqItems = document.querySelectorAll(".faq-item[data-faq-index]");
+  
+  faqItems.forEach((item) => {
+    item.addEventListener("click", (e) => {
+      const index = parseInt(item.getAttribute("data-faq-index"));
+      showAnswer(index);
+    });
+
+    // Add hover effect
+    item.style.cursor = "pointer";
+    item.addEventListener("mouseenter", () => {
+      item.style.transform = "translateY(-2px)";
+      item.style.transition = "transform 0.2s ease";
+    });
+
+    item.addEventListener("mouseleave", () => {
+      item.style.transform = "translateY(0)";
+    });
+  });
+
+  // Also expose globally for backwards compatibility
+  window.showAnswer = showAnswer;
 }
 
 // Draggable NFTs functionality
