@@ -1,10 +1,9 @@
 // Optimized Service Worker for Some Gorillas Landing Page
-const CACHE_NAME = "somegorillas-v2";
+const CACHE_NAME = "somegorillas-v3";
 const CRITICAL_ASSETS = [
   "/",
   "/src/style.css",
   "/src/main-optimized.js",
-  "/src/templates/app-template.html",
   "/ClashDisplay-Variable.ttf",
   "/Pally-Variable.ttf",
   "/backgrounds/Hero%20section.png",
@@ -109,7 +108,7 @@ self.addEventListener("fetch", (event) => {
 
 function shouldUpdateCache(request) {
   // Update cache for HTML and critical assets every hour
-  const criticalAssets = ["/", "/src/main-optimized.js", "/src/templates/app-template.html"];
+  const criticalAssets = ["/", "/src/main-optimized.js"];
   return criticalAssets.some(asset => request.url.includes(asset));
 }
 

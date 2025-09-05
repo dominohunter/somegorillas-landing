@@ -1,4 +1,5 @@
-<div class="flex flex-col justify-center">
+// App template as ES6 template literal for better build support
+export const appTemplate = `<div class="flex flex-col justify-center">
   <section class="h-screen overflow-hidden flex items-center justify-center flex-col text-white hero-section">
     <div class="flex flex-col gap-6 justify-center items-center mb-20 max-w-[1440px]">
       <h1 id="header" class="section text-[80px] font-bold text-center cartoon-shadow">Go <span id="banana">Bananas </span>with<br/> Some Gorillas</h1>
@@ -391,4 +392,4 @@
       </div>
     </div>
   </section>
-</div>
+</div>`;

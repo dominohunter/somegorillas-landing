@@ -25,7 +25,7 @@ async function initApp() {
 
   if (isCached) {
     console.log("Assets cached, skipping loader");
-    await initializeApp();
+    initializeApp();
   } else {
     console.log("First visit, showing loader");
     runLoaderSequence();
@@ -57,21 +57,21 @@ function runLoaderSequence() {
 
   function checkAndInitialize() {
     if (assetsLoaded && loaderComplete) {
-      setTimeout(async () => {
+      setTimeout(() => {
         hideLoader();
-        await initializeApp();
+        initializeApp();
       }, 300);
     }
   }
 }
 
 // Initialize the main application
-async function initializeApp() {
+function initializeApp() {
   // Start smooth scroll
   lenis.start();
 
   // Load and render template
-  const templateLoaded = await initializeAppWithTemplate("#app");
+  const templateLoaded = initializeAppWithTemplate("#app");
   
   if (!templateLoaded) {
     console.error("Failed to load app template");
