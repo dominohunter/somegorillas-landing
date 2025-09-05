@@ -53,10 +53,7 @@ export function setupTranslator() {
   });
 
   const addSuccessFlash = (element) => {
-    element.style.boxShadow = "0 0 20px rgba(76, 175, 80, 0.5)";
-    setTimeout(() => {
-      element.style.boxShadow = "";
-    }, 500);
+    // Removed the annoying green box shadow flash
   };
 
   if (translateButton) {
@@ -70,17 +67,14 @@ export function setupTranslator() {
         const translated = translateToGorillak(englishText);
         gorillaField.value = translated;
         addSuccessFlash(gorillaField);
-        animateTyping(gorillaField, translated);
       } else if (gorillaText && !englishText) {
         const translated = translateToEnglish(gorillaText);
         englishField.value = translated;
         addSuccessFlash(englishField);
-        animateTyping(englishField, translated);
       } else if (englishText && gorillaText) {
         const translated = translateToGorillak(englishText);
         gorillaField.value = translated;
         addSuccessFlash(gorillaField);
-        animateTyping(gorillaField, translated);
       } else {
         shakeElement(translateButton);
       }
@@ -90,20 +84,29 @@ export function setupTranslator() {
   if (swapButton) {
     swapButton.addEventListener("click", (e) => {
       e.preventDefault();
+      
+      // Swap input values
       const tempValue = englishField.value;
       englishField.value = gorillaField.value;
       gorillaField.value = tempValue;
-      animateSwap(englishField, gorillaField);
+      
+      // Swap labels
+      const englishLabel = englishField.parentElement.querySelector('p');
+      const gorillaLabel = gorillaField.parentElement.querySelector('p');
+      
+      if (englishLabel && gorillaLabel) {
+        const tempLabelText = englishLabel.textContent;
+        englishLabel.textContent = gorillaLabel.textContent;
+        gorillaLabel.textContent = tempLabelText;
+      }
     });
   }
 
   if (clearButton) {
     clearButton.addEventListener("click", (e) => {
       e.preventDefault();
-      animateClear([englishField, gorillaField], () => {
-        englishField.value = "";
-        gorillaField.value = "";
-      });
+      englishField.value = "";
+      gorillaField.value = "";
     });
   }
 
@@ -116,10 +119,6 @@ export function setupTranslator() {
       englishTimeout = setTimeout(() => {
         const translated = translateToGorillak(englishField.value);
         gorillaField.value = translated;
-        gorillaField.style.opacity = "0.7";
-        setTimeout(() => {
-          gorillaField.style.opacity = "1";
-        }, 200);
       }, 800);
     }
   });
@@ -130,54 +129,9 @@ export function setupTranslator() {
       gorillaTimeout = setTimeout(() => {
         const translated = translateToEnglish(gorillaField.value);
         englishField.value = translated;
-        englishField.style.opacity = "0.7";
-        setTimeout(() => {
-          englishField.style.opacity = "1";
-        }, 200);
       }, 800);
     }
   });
-
-  // Animation functions
-  function animateTyping(element, finalText) {
-    const originalValue = element.value;
-    element.value = "";
-    let i = 0;
-    const typeInterval = setInterval(() => {
-      if (i < finalText.length) {
-        element.value += finalText[i];
-        i++;
-      } else {
-        clearInterval(typeInterval);
-      }
-    }, 30);
-  }
-
-  function animateSwap(element1, element2) {
-    [element1, element2].forEach((el, index) => {
-      el.style.transform = `translateX(${index === 0 ? "20px" : "-20px"})`;
-      el.style.transition = "transform 0.3s ease";
-      setTimeout(() => {
-        el.style.transform = "translateX(0)";
-      }, 300);
-    });
-  }
-
-  function animateClear(elements, callback) {
-    elements.forEach((el) => {
-      el.style.transform = "scale(0.95)";
-      el.style.opacity = "0.5";
-      el.style.transition = "transform 0.2s ease, opacity 0.2s ease";
-    });
-
-    setTimeout(() => {
-      callback();
-      elements.forEach((el) => {
-        el.style.transform = "scale(1)";
-        el.style.opacity = "1";
-      });
-    }, 200);
-  }
 
   function shakeElement(element) {
     element.style.animation = "shake 0.5s ease-in-out";

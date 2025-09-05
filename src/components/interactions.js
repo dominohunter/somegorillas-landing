@@ -36,6 +36,8 @@ export function setupMouthHover() {
 export function setupFAQEventListeners() {
   console.log("Setting up FAQ event listeners...");
   
+  let currentActiveIndex = null;
+  
   const answers = [
     "Because, We are.",
     "Because, Gorilla eat banana.",
@@ -51,8 +53,23 @@ export function setupFAQEventListeners() {
     const mouthClosed = document.getElementById("mouth-closed");
     const mouthOpen = document.getElementById("mouth-open");
     const answerText = document.getElementById("answer-text");
+    const faqItems = document.querySelectorAll(".faq-item");
 
     console.log("Elements found:", { mouthClosed, mouthOpen, answerText });
+
+    // Remove active state from all FAQ items
+    faqItems.forEach((item) => {
+      item.style.backgroundColor = "";
+      item.classList.remove("faq-active");
+    });
+
+    // Add active state to clicked item
+    const clickedItem = document.querySelector(`.faq-item[data-index="${index}"]`);
+    if (clickedItem) {
+      clickedItem.style.backgroundColor = "#F6CD79";
+      clickedItem.classList.add("faq-active");
+      currentActiveIndex = index;
+    }
 
     if (mouthClosed && mouthOpen) {
       mouthClosed.style.opacity = "0";
@@ -79,7 +96,7 @@ export function setupFAQEventListeners() {
   }
 
   // Set up event listeners for FAQ items
-  const faqItems = document.querySelectorAll(".faq-item[data-faq-index]");
+  const faqItems = document.querySelectorAll(".faq-item[data-index]");
   console.log(`Found ${faqItems.length} FAQ items`);
   
   faqItems.forEach((item, i) => {
@@ -87,7 +104,7 @@ export function setupFAQEventListeners() {
     
     item.addEventListener("click", (e) => {
       console.log("FAQ item clicked:", item);
-      const index = parseInt(item.getAttribute("data-faq-index"));
+      const index = parseInt(item.getAttribute("data-index"));
       console.log("FAQ index:", index);
       showAnswer(index);
     });
@@ -95,12 +112,16 @@ export function setupFAQEventListeners() {
     // Add hover effect
     item.style.cursor = "pointer";
     item.addEventListener("mouseenter", () => {
-      item.style.transform = "translateY(-2px)";
-      item.style.transition = "transform 0.2s ease";
+      if (currentActiveIndex !== i) {
+        item.style.transform = "translateY(-2px)";
+        item.style.transition = "transform 0.2s ease";
+      }
     });
 
     item.addEventListener("mouseleave", () => {
-      item.style.transform = "translateY(0)";
+      if (currentActiveIndex !== i) {
+        item.style.transform = "translateY(0)";
+      }
     });
   });
 

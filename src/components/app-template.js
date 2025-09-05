@@ -27,7 +27,7 @@ export const appTemplate = `<div class="flex flex-col justify-center">
   </section>
 
   <section class="h-screen md:h-[50vh]  flex flex-col lg:flex-row items-center py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-16 gap-6 sm:gap-10 lg:gap-20 justify-center bg-cover bg-center bg-no-repeat" style="background-image: url('/backgrounds/Section%202.png')">
-    <div id="mouth-container" class="relative w-[200px] h-[200px] sm:w-[250px] sm:h-[250px] md:w-[280px] md:h-[280px] lg:w-[320px] lg:h-[320px] cartoon-boxshadow border-2 rounded-t-full border-black cursor-pointer flex-shrink-0 hover:scale-105 transition-all duration-300" style="background: radial-gradient(100% 100% at 50% 0%, #E8B95A 0%, #0F1012 100%);" onmouseover="this.style.background='radial-gradient(100% 100% at 50% 0%, #E85A5A 0%, #0F1012 100%)'; document.getElementById('circle-bg').style.background='radial-gradient(100% 100% at 50% 0%, #E85A5A 0%, #0F1012 100%)'" onmouseout="this.style.background='radial-gradient(100% 100% at 50% 0%, #E8B95A 0%, #0F1012 100%)'; document.getElementById('circle-bg').style.background='radial-gradient(100% 100% at 50% 0%, #E8B95A 0%, #0F1012 100%)'">
+    <div id="mouth-container" class="relative w-[200px] h-[200px] sm:w-[250px] sm:h-[250px] md:w-[280px] md:h-[280px] lg:w-[320px] lg:h-[320px] cartoon-boxshadow border-2 rounded-t-full border-black cursor-pointer flex-shrink-0 " style="background: radial-gradient(100% 100% at 50% 0%, #E8B95A 0%, #0F1012 100%);" onmouseover="this.style.background='radial-gradient(100% 100% at 50% 0%, #E85A5A 0%, #0F1012 100%)'; document.getElementById('circle-bg').style.background='radial-gradient(100% 100% at 50% 0%, #E85A5A 0%, #0F1012 100%)'" onmouseout="this.style.background='radial-gradient(100% 100% at 50% 0%, #E8B95A 0%, #0F1012 100%)'; document.getElementById('circle-bg').style.background='radial-gradient(100% 100% at 50% 0%, #E8B95A 0%, #0F1012 100%)'">
       <div id="circle-bg" class="absolute inset-0 w-full h-full rounded-t-full transition-all duration-200" style="background: radial-gradient(100% 100% at 50% 0%, #E8B95A 0%, #0F1012 100%);"></div>
       <img id="closed-mouth" src="/nfts/section-2/Closed mouth.webp" alt="Closed mouth" class="absolute inset-0 w-full h-full object-contain z-10" loading="lazy" />
       <img id="open-mouth" src="/nfts/section-2/Open Mouth.webp" alt="Open Mouth" class="absolute inset-0 w-full h-full object-contain opacity-0 z-10" loading="lazy" />
@@ -176,7 +176,7 @@ export const appTemplate = `<div class="flex flex-col justify-center">
         </div>
         <div class="flex flex-col md:flex-row lg:flex-col xl:flex-row rounded-[20px] p-4 sm:p-5 lg:p-6 gap-4 sm:gap-5 lg:gap-6 bg-translucent-light-72 border-2 border-dark-primary cartoon-boxshadow">
           <div class="w-full md:w-[140px] lg:w-full xl:w-[180px] h-40 md:h-[140px] lg:h-48 xl:h-[180px] rounded-2xl relative border-2 border-black aspect-square flex-shrink-0">
-            <img src="/mouth-closed.png" class="object-cover absolute -bottom-[65px] sm:-bottom-[29px] md:-bottom-[49px] lg:-bottom-[74px] xl:-bottom-[41px] w-[85%] sm:w-full h-auto left-1/2 transform -translate-x-1/2" alt="Mines game"/>
+            <img src="/mouth-closed.png" class="object-cover absolute -bottom-[65px] md:-bottom-[31px] lg:-bottom-[42px] xl:-bottom-[40px] w-[85%] sm:w-full h-auto left-1/2 transform -translate-x-1/2" alt="Mines game"/>
           </div>
           <div class="flex flex-col gap-3 sm:gap-4 lg:gap-5 flex-1">
             <div class="flex flex-col gap-2">
@@ -192,7 +192,7 @@ export const appTemplate = `<div class="flex flex-col justify-center">
         </div>
         <div class="flex flex-col md:flex-row lg:flex-col xl:flex-row rounded-[20px] p-4 sm:p-5 lg:p-6 gap-4 sm:gap-5 lg:gap-6 bg-translucent-light-72 border-2 border-dark-primary cartoon-boxshadow">
           <div class="w-full md:w-[140px] lg:w-full xl:w-[180px] h-40 md:h-[140px] lg:h-48 xl:h-[180px] rounded-2xl relative border-2 border-black aspect-square flex-shrink-0">
-            <img src="/mouth-closed.png" class="object-cover absolute -bottom-[65px] sm:-bottom-[29px] md:-bottom-[80px] lg:-bottom-[74px] xl:-bottom-[41px] w-[85%] sm:w-full h-auto left-1/2 transform -translate-x-1/2" alt="Flinko game"/>
+            <img src="/mouth-closed.png" class="object-cover absolute -bottom-[65px] md:-bottom-[31px] lg:-bottom-[42px] xl:-bottom-[40px] w-[85%] sm:w-full h-auto left-1/2 transform -translate-x-1/2" alt="Flinko game"/>
           </div>
           <div class="flex flex-col gap-3 sm:gap-4 lg:gap-5 flex-1">
             <div class="flex flex-col gap-2">
@@ -208,7 +208,7 @@ export const appTemplate = `<div class="flex flex-col justify-center">
         </div>
         <div class="flex flex-col md:flex-row lg:flex-col xl:flex-row rounded-[20px] p-4 sm:p-5 lg:p-6 gap-4 sm:gap-5 lg:gap-6 bg-translucent-light-72 border-2 border-dark-primary cartoon-boxshadow">
           <div class="w-full md:w-[140px] lg:w-full xl:w-[180px] h-40 md:h-[140px] lg:h-48 xl:h-[180px] rounded-2xl relative border-2 border-black aspect-square flex-shrink-0">
-            <img src="/mouth-closed.png" class="object-cover absolute -bottom-[65px] sm:-bottom-[29px] md:-bottom-[74px] lg:-bottom-[74px] xl:-bottom-[41px] w-[85%] sm:w-full h-auto left-1/2 transform -translate-x-1/2" alt="Plane game"/>
+            <img src="/mouth-closed.png" class="object-cover absolute -bottom-[65px] md:-bottom-[31px] lg:-bottom-[42px] xl:-bottom-[40px] w-[85%] sm:w-full h-auto left-1/2 transform -translate-x-1/2" alt="Plane game"/>
           </div>
           <div class="flex flex-col gap-3 sm:gap-4 lg:gap-5 flex-1">
             <div class="flex flex-col gap-2">
@@ -283,27 +283,27 @@ export const appTemplate = `<div class="flex flex-col justify-center">
 
         <!-- Responsive FAQ Grid -->
         <div class="grid gap-3 sm:gap-4 lg:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:grid-rows-2 w-full max-w-xs sm:max-w-2xl lg:max-w-4xl xl:max-w-6xl">
-          <div class="faq-item p-3 sm:p-4 lg:p-6 flex border-2 rounded-xl border-dark-primary cartoon-boxshadow backdrop-blur-[20px] bg-translucent-light-64 cursor-pointer hover:scale-105 transition-transform duration-300" onclick="showAnswer(0)">
+          <div class="faq-item p-3 sm:p-4 lg:p-6 flex border-2 rounded-xl border-dark-primary cartoon-boxshadow backdrop-blur-[20px] bg-translucent-light-64 cursor-pointer hover:scale-105 transition-all duration-300" onclick="showAnswer(0)" data-index="0">
             <p class="text-black text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] font-semibold leading-5 sm:leading-6 md:leading-7 lg:leading-8 tracking-wider">Why Some Gorillas?</p>
           </div>
 
-          <div class="faq-item p-3 sm:p-4 lg:p-6 flex border-2 rounded-xl border-dark-primary cartoon-boxshadow backdrop-blur-[20px] bg-translucent-light-64 cursor-pointer hover:scale-105 transition-transform duration-300" onclick="showAnswer(1)">
+          <div class="faq-item p-3 sm:p-4 lg:p-6 flex border-2 rounded-xl border-dark-primary cartoon-boxshadow backdrop-blur-[20px] bg-translucent-light-64 cursor-pointer hover:scale-105 transition-all duration-300" onclick="showAnswer(1)" data-index="1">
             <p class="text-black text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] font-semibold leading-5 sm:leading-6 md:leading-7 lg:leading-8 tracking-wider">Why Banana?</p>
           </div>
 
-          <div class="faq-item p-3 sm:p-4 lg:p-6 flex border-2 rounded-xl border-dark-primary cartoon-boxshadow backdrop-blur-[20px] bg-translucent-light-64 cursor-pointer hover:scale-105 transition-transform duration-300" onclick="showAnswer(2)">
+          <div class="faq-item p-3 sm:p-4 lg:p-6 flex border-2 rounded-xl border-dark-primary cartoon-boxshadow backdrop-blur-[20px] bg-translucent-light-64 cursor-pointer hover:scale-105 transition-all duration-300" onclick="showAnswer(2)" data-index="2">
             <p class="text-black text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] font-semibold leading-5 sm:leading-6 md:leading-7 lg:leading-8 tracking-wider">Coin flip for what?</p>
           </div>
 
-          <div class="faq-item p-3 sm:p-4 lg:p-6 flex border-2 rounded-xl border-dark-primary cartoon-boxshadow backdrop-blur-[20px] bg-translucent-light-64 cursor-pointer hover:scale-105 transition-transform duration-300" onclick="showAnswer(3)">
+          <div class="faq-item p-3 sm:p-4 lg:p-6 flex border-2 rounded-xl border-dark-primary cartoon-boxshadow backdrop-blur-[20px] bg-translucent-light-64 cursor-pointer hover:scale-105 transition-all duration-300" onclick="showAnswer(3)" data-index="3">
             <p class="text-black text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] font-semibold leading-5 sm:leading-6 md:leading-7 lg:leading-8 tracking-wider">Whats the road map?</p>
           </div>
 
-          <div class="faq-item p-3 sm:p-4 lg:p-6 flex border-2 rounded-xl border-dark-primary cartoon-boxshadow backdrop-blur-[20px] bg-translucent-light-64 cursor-pointer hover:scale-105 transition-transform duration-300" onclick="showAnswer(4)">
+          <div class="faq-item p-3 sm:p-4 lg:p-6 flex border-2 rounded-xl border-dark-primary cartoon-boxshadow backdrop-blur-[20px] bg-translucent-light-64 cursor-pointer hover:scale-105 transition-all duration-300" onclick="showAnswer(4)" data-index="4">
             <p class="text-black text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] font-semibold leading-5 sm:leading-6 md:leading-7 lg:leading-8 tracking-wider">1 Gorilla vs 100 men?</p>
           </div>
 
-          <div class="faq-item p-3 sm:p-4 lg:p-6 flex border-2 rounded-xl border-dark-primary cartoon-boxshadow backdrop-blur-[20px] bg-translucent-light-64 cursor-pointer hover:scale-105 transition-transform duration-300" onclick="showAnswer(5)">
+          <div class="faq-item p-3 sm:p-4 lg:p-6 flex border-2 rounded-xl border-dark-primary cartoon-boxshadow backdrop-blur-[20px] bg-translucent-light-64 cursor-pointer hover:scale-105 transition-all duration-300" onclick="showAnswer(5)" data-index="5">
             <p class="text-black text-sm sm:text-base md:text-lg lg:text-xl xl:text-[24px] font-semibold leading-5 sm:leading-6 md:leading-7 lg:leading-8 tracking-wider">Have you ever made conversation with gorillas?</p>
           </div>
         </div>
@@ -316,8 +316,8 @@ export const appTemplate = `<div class="flex flex-col justify-center">
     </div>
 
     <!-- Monkey hanging from section bottom -->
-    <img id="mouth-closed" src="mouth-closed.png" class="mouth-transition absolute -bottom-[45px] md:-bottom-[75px] w-[200px] h-[200px] md:w-[clamp(250px,20vw,400px)] md:h-[clamp(250px,20vw,400px)] left-1/2 transform -translate-x-1/2 md:left-[30%] md:transform md:-translate-x-1/2 object-contain"/>
-    <img id="mouth-open" src="mouth-opened.png" class="mouth-transition absolute -bottom-[45px] md:-bottom-[75px] w-[200px] h-[200px] md:w-[clamp(250px,20vw,400px)] md:h-[clamp(250px,20vw,400px)] left-1/2 transform -translate-x-1/2 md:left-[30%] md:transform md:-translate-x-1/2 object-contain opacity-0"/>
+    <img id="mouth-closed" src="mouth-closed.png" class="mouth-transition absolute -bottom-[44px] md:-bottom-[clamp(55px,4.4vw,88px)] w-[200px] h-[200px] md:w-[clamp(250px,20vw,400px)] md:h-[clamp(250px,20vw,400px)] left-1/2 transform -translate-x-1/2 md:left-[30%] md:transform md:-translate-x-1/2 object-contain"/>
+    <img id="mouth-open" src="mouth-opened.png" class="mouth-transition absolute -bottom-[44px] md:-bottom-[clamp(55px,4.4vw,88px)] w-[200px] h-[200px] md:w-[clamp(250px,20vw,400px)] md:h-[clamp(250px,20vw,400px)] left-1/2 transform -translate-x-1/2 md:left-[30%] md:transform md:-translate-x-1/2 object-contain opacity-0"/>
 
     <!-- Answer box positioned properly -->
     <div class="absolute bottom-[200px] left-1/2 transform -translate-x-1/2 md:bottom-[clamp(2rem,12vh,8rem)] md:left-[60%] lg:left-[58%] xl:left-[56%] md:transform md:-translate-x-1/2 p-3 md:p-[clamp(1rem,2vw,1.5rem)] w-[280px] max-w-[90vw] md:w-[clamp(320px,35vw,500px)] border-2 rounded-xl border-dark-primary cartoon-boxshadow backdrop-blur-[20px] bg-[#F6CD79]">
@@ -358,16 +358,16 @@ export const appTemplate = `<div class="flex flex-col justify-center">
            </div>
 
            <div class="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4">
-             <button class="px-4 sm:px-5 bg-gradient-to-b from-accent-primary to-accent-secondary py-2.5 sm:py-3 border-2 border-dark-primary cartoon-boxshadow text-sm sm:text-base font-medium text-dark-primary rounded hover:scale-105 transition-transform duration-300">
+             <button class="px-4 sm:px-5 bg-gradient-to-b from-accent-primary to-accent-secondary py-2.5 sm:py-3 border-2 border-dark-primary cartoon-boxshadow text-sm sm:text-base font-medium text-dark-primary rounded ">
                Translate
              </button>
 
-             <button class="px-4 sm:px-5 bg-light-primary py-2.5 sm:py-3 text-dark-primary border-2 border-dark-primary cartoon-boxshadow text-sm sm:text-base font-medium  rounded hover:scale-105 transition-transform duration-300">
-               <p class="text-sm sm:text-base font-medium text-dark-primary">Swap</p>
+             <button class="px-4 sm:px-5 bg-light-primary py-2.5 sm:py-3 text-dark-primary border-2 border-dark-primary cartoon-boxshadow text-sm sm:text-base font-medium  rounded  ">
+               Swap
              </button>
 
-             <button class="px-4 sm:px-5 py-2.5 sm:py-3 border-2 bg-light-primary border-dark-primary cartoon-boxshadow text-sm sm:text-base font-medium text-dark-primary rounded hover:scale-105 transition-transform duration-300">
-               <p class="text-sm sm:text-base font-medium text-dark-primary">Clear</p>
+             <button class="px-4 sm:px-5 py-2.5 sm:py-3 border-2 bg-light-primary border-dark-primary cartoon-boxshadow text-sm sm:text-base font-medium text-dark-primary rounded">
+              Clear
              </button>
            </div>
          </div>
@@ -414,8 +414,8 @@ export const appTemplate = `<div class="flex flex-col justify-center">
          </div>
 
          <!-- Teacher Image -->
-         <div class="w-full max-w-xs sm:max-w-sm lg:w-[300px] xl:w-[400px] h-auto aspect-square flex-shrink-0 self-end">
-           <img src="/Teacher.png" class="w-full h-full object-contain"/>
+         <div class="w-full relative max-w-xs sm:max-w-sm lg:w-[300px] xl:w-[400px] h-auto aspect-square flex-shrink-0 self-end">
+           <img src="/Teacher.png" class="w-full h-full object-contain absolute -bottom-6"/>
          </div>
 
        </div>
