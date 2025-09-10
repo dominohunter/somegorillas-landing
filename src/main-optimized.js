@@ -1,10 +1,20 @@
 import "./style.css";
+import "./style-optimizations.css";
 import { lenis } from "./smooth-scroll.js";
 import { createLoader, hideLoader, preloadAssets } from "./loader.js";
 import { initializeAppWithTemplate } from "./components/template-loader.js";
 import { setupMouthHover, setupFAQEventListeners, setupDraggableNFTs } from "./components/interactions.js";
 import { setupTranslator } from "./components/translator.js";
 import { initHeroAnimations, createParticleEffect } from "./components/hero-animations.js";
+
+function addScrollOptimizations() {
+  // Just add GPU acceleration without disabling effects
+  const heavyElements = document.querySelectorAll('.backdrop-blur-md, [style*="background: radial-gradient"], .apes');
+  heavyElements.forEach(el => {
+    el.style.transform = 'translateZ(0)';
+    el.style.willChange = 'transform';
+  });
+}
 
 // Register service worker with better error handling
 if ("serviceWorker" in navigator) {
@@ -102,6 +112,9 @@ function initializeApp() {
     setupFAQEventListeners();
     setupDraggableNFTs();
     setupTranslator();
+    
+    // Add scroll performance optimizations
+    addScrollOptimizations();
   }, 100);
 
   console.log("App initialization complete");

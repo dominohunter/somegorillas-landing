@@ -51,7 +51,7 @@ export const appTemplate = `<div class="flex flex-col justify-center">
     <div class="flex flex-col gap-3 sm:gap-4 py-4 sm:py-6 px-4 sm:px-6 lg:px-8 max-w-full lg:max-w-[720px] bg-white/80 border rounded-2xl border-black cartoon-boxshadow">
       <p class="text-black text-xl sm:text-2xl md:text-3xl lg:text-[40px] font-semibold leading-tight tracking-wide">Some Gorillas?</p>
       <p class="font-pally text-black text-sm sm:text-base md:text-lg lg:text-[20px] font-medium leading-relaxed tracking-wide">
-        Some Gorillas is a meme-powered NFT project where each gorilla is a unique collectible with real utility. Mint, stake, and earn banana tokens by playing fun mini-games like coin flip and minesweeper. Built for laughs, rewards, and a community that doesn't take itself too seriously.
+        Some Gorillas is a meme powered NFT project where each gorilla is a unique collectible with real utility. Mint, stake, and earn bananas by playing fun mini-games like coin flip and mines. Built for laughs, rewards, degens. But serious and thoughtful on important things.
       </p>
     </div>
   </section>
@@ -61,38 +61,23 @@ export const appTemplate = `<div class="flex flex-col justify-center">
       <div class="w-full flex flex-col lg:flex-row gap-4 sm:gap-6 items-start justify-center text-white">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-rows-auto lg:grid-rows-[1fr_350px] flex-1 w-full h-full gap-4 sm:gap-6">
           <div class="col-span-1 md:col-span-2 lg:col-span-3 relative p-4 sm:p-6 lg:p-8 rounded-2xl backdrop-blur-md bg-translucent-light-4 border border-translucent-light-4 overflow-hidden">
-            <!-- Multiple blurred gradient circles -->
-            <div class="absolute -right-20 -top-20 w-60 h-60 rounded-full opacity-60" style="background: radial-gradient(circle, #69C9EC 0%, #332FF5 33%, #A638E7 67%, #E13949 100%); filter: blur(120px);"></div>
-            <div class="absolute -right-10 -top-32 w-48 h-48 rounded-full opacity-40" style="background: radial-gradient(circle, #E13949 0%, #A638E7 50%, #332FF5 100%); filter: blur(100px);"></div>
-            <div class="absolute -right-32 -top-10 w-52 h-52 rounded-full opacity-30" style="background: radial-gradient(circle, #332FF5 0%, #69C9EC 100%); filter: blur(140px);"></div>
-            <!-- Additional gradients on opposite side -->
-            <div class="absolute -left-20 -bottom-20 w-56 h-56 rounded-full opacity-50" style="background: radial-gradient(circle, #A638E7 0%, #69C9EC 50%, #332FF5 100%); filter: blur(110px);"></div>
-            <div class="absolute -left-10 -bottom-32 w-44 h-44 rounded-full opacity-35" style="background: radial-gradient(circle, #332FF5 0%, #E13949 100%); filter: blur(90px);"></div>
-            <div class="absolute -left-32 -bottom-5 w-50 h-50 rounded-full opacity-25" style="background: radial-gradient(circle, #69C9EC 0%, #A638E7 100%); filter: blur(130px);"></div>
+            <!-- Gradient backgrounds in opposite corners -->
+            <div class="absolute -top-10 -left-10 w-[240px] h-[240px] rounded-full opacity-40" style="background: radial-gradient(circle, #69C9EC 0%, #332FF5 50%, #A638E7 100%); filter: blur(100px);"></div>
+            <div class="absolute -bottom-10 -right-10 w-[240px] h-[240px] rounded-full opacity-35" style="background: radial-gradient(circle, #A638E7 0%, #332FF5 50%, #69C9EC 100%); filter: blur(100px);"></div>
             <p class="relative z-10 text-xl sm:text-2xl md:text-3xl lg:text-[56px] text-white font-medium leading-tight">Some Gorillas is the <span class="text-[#FFCE3C]">First DAO</span> on Somnia Network</p>
           </div>
           <div class="col-span-1 md:col-span-1 lg:col-span-2 relative p-4 sm:p-6 rounded-2xl backdrop-blur-md bg-translucent-light-4 border border-translucent-light-4 overflow-hidden">
-            <!-- Multiple blurred gradient circles -->
-            <div class="absolute -left-20 -bottom-20 w-60 h-60 rounded-full opacity-60" style="background: radial-gradient(circle, #69C9EC 0%, #332FF5 33%, #A638E7 67%, #E13949 100%); filter: blur(120px);"></div>
-            <div class="absolute -left-10 -bottom-32 w-48 h-48 rounded-full opacity-40" style="background: radial-gradient(circle, #E13949 0%, #A638E7 50%, #332FF5 100%); filter: blur(100px);"></div>
-            <div class="absolute -left-32 -bottom-10 w-52 h-52 rounded-full opacity-30" style="background: radial-gradient(circle, #332FF5 0%, #69C9EC 100%); filter: blur(140px);"></div>
-            <!-- Additional gradients on opposite side -->
-            <div class="absolute -right-20 -top-20 w-56 h-56 rounded-full opacity-50" style="background: radial-gradient(circle, #A638E7 0%, #69C9EC 50%, #332FF5 100%); filter: blur(110px);"></div>
-            <div class="absolute -right-10 -top-32 w-44 h-44 rounded-full opacity-35" style="background: radial-gradient(circle, #332FF5 0%, #E13949 100%); filter: blur(90px);"></div>
-            <div class="absolute -right-32 -top-5 w-50 h-50 rounded-full opacity-25" style="background: radial-gradient(circle, #69C9EC 0%, #A638E7 100%); filter: blur(130px);"></div>
+            <!-- Gradient backgrounds in opposite corners -->
+            <div class="absolute -top-10 -right-10 w-[240px] h-[240px] rounded-full opacity-35" style="background: radial-gradient(circle, #69C9EC 0%, #332FF5 50%, #A638E7 100%); filter: blur(100px);"></div>
+            <div class="absolute -bottom-10 -left-10 w-[240px] h-[240px] rounded-full opacity-30" style="background: radial-gradient(circle, #A638E7 0%, #332FF5 50%, #69C9EC 100%); filter: blur(100px);"></div>
             <div class="relative z-10 w-full h-40 sm:h-48 md:h-56 lg:h-full rounded-xl bg-white/5 border-2 border-translucent-light-4 overflow-hidden">
               <img src="/nfts/section-3.webp" class="object-cover w-full h-full" alt="Section 3"/>
             </div>
           </div>
           <div class="col-span-1 relative rounded-xl p-4 backdrop-blur-md bg-translucent-light-4 border border-translucent-light-4 overflow-hidden">
-            <!-- Multiple blurred gradient circles -->
-            <div class="absolute -right-10 -top-10 w-60 h-60 rounded-full opacity-60" style="background: radial-gradient(circle, #69C9EC 0%, #332FF5 33%, #A638E7 67%, #E13949 100%); filter: blur(120px);"></div>
-            <div class="absolute -right-20 -top-20 w-48 h-48 rounded-full opacity-40" style="background: radial-gradient(circle, #E13949 0%, #A638E7 50%, #332FF5 100%); filter: blur(100px);"></div>
-            <div class="absolute -right-5 -top-25 w-52 h-52 rounded-full opacity-30" style="background: radial-gradient(circle, #332FF5 0%, #69C9EC 100%); filter: blur(140px);"></div>
-            <!-- Additional gradients on opposite side -->
-            <div class="absolute -left-15 -bottom-15 w-56 h-56 rounded-full opacity-50" style="background: radial-gradient(circle, #A638E7 0%, #69C9EC 50%, #332FF5 100%); filter: blur(110px);"></div>
-            <div class="absolute -left-5 -bottom-25 w-44 h-44 rounded-full opacity-35" style="background: radial-gradient(circle, #332FF5 0%, #E13949 100%); filter: blur(90px);"></div>
-            <div class="absolute -left-25 -bottom-5 w-50 h-50 rounded-full opacity-25" style="background: radial-gradient(circle, #69C9EC 0%, #A638E7 100%); filter: blur(130px);"></div>
+            <!-- Gradient backgrounds in opposite corners -->
+            <div class="absolute -top-10 -left-10 w-[240px] h-[240px] rounded-full opacity-45" style="background: radial-gradient(circle, #69C9EC 0%, #332FF5 50%, #A638E7 100%); filter: blur(100px);"></div>
+            <div class="absolute -bottom-10 -right-10 w-[240px] h-[240px] rounded-full opacity-40" style="background: radial-gradient(circle, #A638E7 0%, #332FF5 50%, #69C9EC 100%); filter: blur(100px);"></div>
             <div class="relative z-10 bg-translucent-light-4 border-2 border-translucent-light-4 h-40 sm:h-48 md:h-56 lg:h-full w-full rounded-xl overflow-hidden">
               <img draggable="false" src="/section3/section-3.png" class="object-cover w-full h-full" alt="Section 3 Detail"/>
             </div>
@@ -100,14 +85,9 @@ export const appTemplate = `<div class="flex flex-col justify-center">
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 grid-rows-auto md:grid-rows-[320px_1fr] lg:grid-rows-[380px_1fr] flex-1 w-full h-full gap-4 sm:gap-6">
           <div class="col-span-1 row-span-1 relative rounded-2xl p-4 sm:p-5 flex flex-col justify-between items-end backdrop-blur-md bg-translucent-light-4 border border-translucent-light-4 overflow-hidden min-h-[200px] hover:scale-105 transition-transform duration-300 cursor-pointer" onclick="window.open('https://x.com/Somnia_Network', '_blank')">
-            <!-- Multiple blurred gradient circles -->
-            <div class="absolute -left-20 -top-20 w-60 h-60 rounded-full opacity-60" style="background: radial-gradient(circle, #69C9EC 0%, #332FF5 33%, #A638E7 67%, #E13949 100%); filter: blur(120px);"></div>
-            <div class="absolute -left-10 -top-32 w-48 h-48 rounded-full opacity-40" style="background: radial-gradient(circle, #E13949 0%, #A638E7 50%, #332FF5 100%); filter: blur(100px);"></div>
-            <div class="absolute -left-32 -top-10 w-52 h-52 rounded-full opacity-30" style="background: radial-gradient(circle, #332FF5 0%, #69C9EC 100%); filter: blur(140px);"></div>
-            <!-- Additional gradients on opposite side -->
-            <div class="absolute -right-20 -bottom-20 w-56 h-56 rounded-full opacity-50" style="background: radial-gradient(circle, #A638E7 0%, #69C9EC 50%, #332FF5 100%); filter: blur(110px);"></div>
-            <div class="absolute -right-10 -bottom-32 w-44 h-44 rounded-full opacity-35" style="background: radial-gradient(circle, #332FF5 0%, #E13949 100%); filter: blur(90px);"></div>
-            <div class="absolute -right-32 -bottom-5 w-50 h-50 rounded-full opacity-25" style="background: radial-gradient(circle, #69C9EC 0%, #A638E7 100%); filter: blur(130px);"></div>
+            <!-- Gradient backgrounds in opposite corners -->
+            <div class="absolute -top-10 -right-10 w-[240px] h-[240px] rounded-full opacity-40" style="background: radial-gradient(circle, #69C9EC 0%, #332FF5 50%, #A638E7 100%); filter: blur(100px);"></div>
+            <div class="absolute -bottom-10 -left-10 w-[240px] h-[240px] rounded-full opacity-35" style="background: radial-gradient(circle, #A638E7 0%, #332FF5 50%, #69C9EC 100%); filter: blur(100px);"></div>
             <div class="relative z-10">
               <img src="/up-right.svg" alt="Up right" class="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8"/>
             </div>
@@ -116,14 +96,9 @@ export const appTemplate = `<div class="flex flex-col justify-center">
             </p>
           </div>
           <div class="col-span-1 row-span-1 relative rounded-2xl p-4 sm:p-5 flex flex-col justify-between items-end backdrop-blur-md bg-translucent-light-4 border border-translucent-light-4 overflow-hidden min-h-[200px] hover:scale-105 transition-transform duration-300 cursor-pointer" onclick="window.open('https://somnia.network/', '_blank')">
-            <!-- Multiple blurred gradient circles -->
-            <div class="absolute -right-20 -top-20 w-60 h-60 rounded-full opacity-60" style="background: radial-gradient(circle, #69C9EC 0%, #332FF5 33%, #A638E7 67%, #E13949 100%); filter: blur(120px);"></div>
-            <div class="absolute -right-10 -top-32 w-48 h-48 rounded-full opacity-40" style="background: radial-gradient(circle, #E13949 0%, #A638E7 50%, #332FF5 100%); filter: blur(100px);"></div>
-            <div class="absolute -right-32 -top-10 w-52 h-52 rounded-full opacity-30" style="background: radial-gradient(circle, #332FF5 0%, #69C9EC 100%); filter: blur(140px);"></div>
-            <!-- Additional gradients on opposite side -->
-            <div class="absolute -left-20 -bottom-20 w-56 h-56 rounded-full opacity-50" style="background: radial-gradient(circle, #A638E7 0%, #69C9EC 50%, #332FF5 100%); filter: blur(110px);"></div>
-            <div class="absolute -left-10 -bottom-32 w-44 h-44 rounded-full opacity-35" style="background: radial-gradient(circle, #332FF5 0%, #E13949 100%); filter: blur(90px);"></div>
-            <div class="absolute -left-32 -bottom-5 w-50 h-50 rounded-full opacity-25" style="background: radial-gradient(circle, #69C9EC 0%, #A638E7 100%); filter: blur(130px);"></div>
+            <!-- Gradient backgrounds in opposite corners -->
+            <div class="absolute -top-10 -left-10 w-[240px] h-[240px] rounded-full opacity-40" style="background: radial-gradient(circle, #69C9EC 0%, #332FF5 50%, #A638E7 100%); filter: blur(100px);"></div>
+            <div class="absolute -bottom-10 -right-10 w-[240px] h-[240px] rounded-full opacity-35" style="background: radial-gradient(circle, #A638E7 0%, #332FF5 50%, #69C9EC 100%); filter: blur(100px);"></div>
             <div class="relative z-10">
               <img src="/up-right.svg" alt="Up right" class="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8"/>
             </div>
@@ -132,14 +107,9 @@ export const appTemplate = `<div class="flex flex-col justify-center">
             </p>
           </div>
           <div class="col-span-1 md:col-span-2 relative p-4 sm:p-6 rounded-2xl flex flex-col gap-3 sm:gap-4 backdrop-blur-md bg-translucent-light-4 border border-translucent-light-4 overflow-hidden">
-            <!-- Multiple blurred gradient circles -->
-            <div class="absolute -right-20 -bottom-20 w-60 h-60 rounded-full opacity-60" style="background: radial-gradient(circle, #69C9EC 0%, #332FF5 33%, #A638E7 67%, #E13949 100%); filter: blur(120px);"></div>
-            <div class="absolute -right-10 -bottom-32 w-48 h-48 rounded-full opacity-40" style="background: radial-gradient(circle, #E13949 0%, #A638E7 50%, #332FF5 100%); filter: blur(100px);"></div>
-            <div class="absolute -right-32 -bottom-10 w-52 h-52 rounded-full opacity-30" style="background: radial-gradient(circle, #332FF5 0%, #69C9EC 100%); filter: blur(140px);"></div>
-            <!-- Additional gradients on opposite side -->
-            <div class="absolute -left-20 -top-20 w-56 h-56 rounded-full opacity-50" style="background: radial-gradient(circle, #A638E7 0%, #69C9EC 50%, #332FF5 100%); filter: blur(110px);"></div>
-            <div class="absolute -left-10 -top-32 w-44 h-44 rounded-full opacity-35" style="background: radial-gradient(circle, #332FF5 0%, #E13949 100%); filter: blur(90px);"></div>
-            <div class="absolute -left-32 -top-5 w-50 h-50 rounded-full opacity-25" style="background: radial-gradient(circle, #69C9EC 0%, #A638E7 100%); filter: blur(130px);"></div>
+            <!-- Gradient backgrounds in opposite corners -->
+            <div class="absolute -top-10 -left-10 w-[240px] h-[240px] rounded-full opacity-40" style="background: radial-gradient(circle, #69C9EC 0%, #332FF5 50%, #A638E7 100%); filter: blur(100px);"></div>
+            <div class="absolute -bottom-10 -right-10 w-[240px] h-[240px] rounded-full opacity-35" style="background: radial-gradient(circle, #A638E7 0%, #332FF5 50%, #69C9EC 100%); filter: blur(100px);"></div>
             <p class="relative z-10 text-white text-lg sm:text-xl md:text-2xl lg:text-[28px] font-semibold leading-tight">
               What is Somnia Network?
             </p>
@@ -155,7 +125,7 @@ export const appTemplate = `<div class="flex flex-col justify-center">
   <section class="min-h-screen items-center justify-center py-10 sm:py-16 lg:py-[80px] gap-6 sm:gap-8 lg:gap-12 flex-col text-white flex px-4 sm:px-8 bg-cover bg-center bg-no-repeat" style="background-image: url('/backgrounds/Section%204.png')">
     <div class="flex flex-col items-center justify-center gap-6 sm:gap-8 lg:gap-12 max-w-[1440px] mx-auto w-full">
       <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-semibold leading-8 sm:leading-10 md:leading-12 lg:leading-[64px] cartoon-shadow text-center">Fresh Out of the Jungle</h2>
-      <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3 lg:gap-4 max-w-sm sm:max-w-lg lg:max-w-none" id="nft-grid">
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3 lg:gap-4 max-w-sm sm:max-w-lg lg:max-w-4xl" id="nft-grid">
         <img src="/nfts/section-4/1.webp" alt="NFT 1" class="apes border-2 border-dark-primary w-full h-[186px] object-cover rounded-lg cartoon-boxshadow cursor-grab active:cursor-grabbing" loading="lazy" />
         <img src="/nfts/section-4/2.webp" alt="NFT 2" class="apes border-2 border-dark-primary w-full h-[186px] object-cover rounded-lg cartoon-boxshadow cursor-grab active:cursor-grabbing" loading="lazy" />
         <img src="/nfts/section-4/3.webp" alt="NFT 3" class="apes border-2 border-dark-primary w-full h-[186px] object-cover rounded-lg cartoon-boxshadow cursor-grab active:cursor-grabbing" loading="lazy" />
@@ -185,7 +155,7 @@ export const appTemplate = `<div class="flex flex-col justify-center">
                 Heads or Butts, the thrill never fails, every flip could change your fate.
               </p>
             </div>
-            <button class="!bg-gradient-to-r w-fit cartoon-boxshadow from-accent-primary to-accent-secondary text-dark-primary border-dark-primary border-2 rounded-2xl py-2.5 sm:py-3 px-4 sm:px-6 text-white font-semibold text-sm sm:text-base hover:scale-105 transition-transform duration-300">
+            <button  onclick="window.open('https://app.somegorillas.com', '_blank')" class="!bg-gradient-to-r w-fit cartoon-boxshadow from-accent-primary to-accent-secondary text-dark-primary border-dark-primary border-2 rounded-2xl py-2.5 sm:py-3 px-4 sm:px-6 text-white font-semibold text-sm sm:text-base hover:scale-105 transition-transform duration-300">
               <p class="text-dark-primary">Play now!</p>
             </button>
           </div>

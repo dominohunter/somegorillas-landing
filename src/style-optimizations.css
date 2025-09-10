@@ -1,0 +1,25 @@
+/* GPU acceleration for heavy elements */
+.backdrop-blur-md,
+[style*="background: radial-gradient"] {
+  transform: translateZ(0);
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+/* Optimize hero images */
+.hero-section img {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Optimize draggable elements */
+.apes {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Smooth transitions */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
