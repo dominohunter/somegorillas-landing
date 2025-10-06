@@ -22,7 +22,7 @@ export const appTemplate = `<div class="flex flex-col justify-center">
   </nav>
     <div class="flex flex-col gap-6 sm:gap-8 justify-center items-center mb-12 sm:mb-16 md:mb-20 max-w-[1440px] px-4 sm:px-6 md:px-8 pt-8 sm:pt-12">
       <h1 id="header" class="section text-[clamp(1.75rem,7vw,80px)] font-bold text-center cartoon-shadow leading-tight">Go <span id="banana">Bananas </span>with<br/> Some Gorillas</h1>
-      <p class="font-pally text-[clamp(0.95rem,2.5vw,20px)] leading-6 sm:leading-7 tracking-wide text-center max-w-4xl px-2">Some Gorillas is a meme-fueled NFT project where you can mint, stake, and<br class="hidden sm:block"/> earn banana tokens by playing fun mini-games.</p>
+      <p class=" text-[28px] font-semibold leading-6 sm:leading-7 tracking-wide text-center max-w-4xl px-2">Building the strongest DAO on Somnia</p>
       <button onclick="window.open('https://app.somegorillas.com', '_blank')" class="w-fit bg-gradient-to-b text-dark-primary mb-10 border-2 border-dark-primary cartoon-boxshadow from-accent-secondary justify-center items-center gap-3 to-accent-primary py-3 sm:py-4 pr-5 sm:pr-6 pl-4 sm:pl-5 flex flex-row items-center hover:scale-105 transition-transform duration-300">
         <p class="text-dark-primary font-semibold text-base sm:text-[18px] leading-6">Go to Cave</p>
         <img src="/arrow-right.png" alt="Arrow right" class="w-4 h-4 sm:w-5 sm:h-5"/>
@@ -160,19 +160,17 @@ export const appTemplate = `<div class="flex flex-col justify-center">
             </button>
           </div>
         </div>
-        <div class="flex flex-col md:flex-row lg:flex-col xl:flex-row rounded-[20px] p-4 sm:p-5 lg:p-6 gap-4 sm:gap-5 lg:gap-6 bg-translucent-light-72 border-2 border-dark-primary cartoon-boxshadow">
-          <div class="w-full md:w-[140px] lg:w-full xl:w-[180px] h-40 md:h-[140px] lg:h-48 xl:h-[180px] rounded-2xl relative border-2 border-black aspect-square flex-shrink-0">
-            <img src="/mouth-closed.png" class="object-cover absolute -bottom-[65px] md:-bottom-[31px] lg:-bottom-[42px] xl:-bottom-[40px] w-[85%] sm:w-full h-auto left-1/2 transform -translate-x-1/2" alt="Mines game"/>
-          </div>
+        <div class="flex flex-col md:flex-row lg:flex-col xl:flex-row rounded-[20px] p-4 sm:p-5 lg:p-6 gap-4 sm:gap-5 lg:gap-6 bg-translucent-light-72 border-2 border-dark-primary cartoon-boxshadow hover:scale-105 transition-transform duration-300">
+          <img src="/mine.svg" class="w-full md:w-[140px] lg:w-full xl:w-[180px] h-40 md:h-[140px] lg:h-48 xl:h-[180px] rounded-2xl border-2 border-black aspect-square object-cover bg-gradient-to-b from-accent-secondary to-accent-primary flex-shrink-0" alt="Coin flip"/>
           <div class="flex flex-col gap-3 sm:gap-4 lg:gap-5 flex-1">
             <div class="flex flex-col gap-2">
               <p class="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-[36px] text-black font-semibold leading-tight">Mines</p>
               <p class="font-pally text-sm sm:text-base md:text-lg lg:text-[18px] leading-relaxed text-dark-primary">
-                Step carefully, think wisely, one wrong move and it's game over.
+              Step carefully, think wisely, one wrong move and it’s game over.
               </p>
             </div>
-            <button disabled class="!bg-light-primary w-fit cartoon-boxshadow disabled:cursor-not-allowed border-dark-primary border-2 rounded-2xl py-2.5 sm:py-3 px-4 sm:px-6 !text-dark-primary font-semibold opacity-80 text-sm sm:text-base">
-              Coming soon
+            <button  onclick="window.open('https://app.somegorillas.com', '_blank')" class="!bg-gradient-to-r w-fit cartoon-boxshadow from-accent-primary to-accent-secondary text-dark-primary border-dark-primary border-2 rounded-2xl py-2.5 sm:py-3 px-4 sm:px-6 text-white font-semibold text-sm sm:text-base hover:scale-105 transition-transform duration-300">
+              <p class="text-dark-primary">Play now!</p>
             </button>
           </div>
         </div>
@@ -448,15 +446,16 @@ export const appTemplate = `<div class="flex flex-col justify-center">
             <img src="/arrow-right.png" alt="Arrow right" class="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7"/>
           </div>
         </div>
-        <div class="w-full p-5 sm:p-6 lg:p-8 flex items-center gap-4 sm:gap-6 lg:gap-8 bg-white/60 border-2 border-dark-primary rounded-2xl cartoon-boxshadow opacity-75 cursor-not-allowed">
-          <div class="rounded-xl p-3 sm:p-4 lg:p-5 border-2 border-dark-primary flex items-center justify-center aspect-square bg-[#856BB5] cartoon-boxshadow flex-shrink-0 opacity-60">
+        <div class="w-full p-5 sm:p-6 lg:p-8 flex items-center gap-4 sm:gap-6 lg:gap-8 bg-white/90 border-2 border-dark-primary rounded-2xl cartoon-boxshadow cursor-pointer hover:scale-105 transition-transform duration-300" onclick="window.open('https://docs.somegorillas.com', '_blank')">
+          <div class="rounded-xl p-3 sm:p-4 lg:p-5 border-2 border-dark-primary flex items-center justify-center aspect-square bg-[#856BB5] cartoon-boxshadow flex-shrink-0">
             <img src="/doc.svg" alt="Documentation" class="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8"/>
           </div>
           <p class="flex-1 text-2xl sm:text-3xl lg:text-[36px] font-semibold text-dark-primary leading-tight">Documentation</p>
-          <div class="rounded-xl p-3 sm:p-4 lg:p-5 cursor-not-allowed border-2 border-dark-primary flex items-center justify-center aspect-square bg-light-primary cartoon-boxshadow opacity-60 flex-shrink-0">
+          <div class="rounded-xl p-3 sm:p-4 lg:p-5 border-2 border-dark-primary flex items-center justify-center aspect-square bg-light-primary cartoon-boxshadow flex-shrink-0">
             <img src="/arrow-right.png" alt="Arrow right" class="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7"/>
           </div>
         </div>
+
       </div>
     </div>
   </section>
